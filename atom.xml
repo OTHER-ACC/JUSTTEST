@@ -1,0 +1,788 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>必富客</title>
+  <subtitle>必富客 ≈ be fun cool</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://www.befuncool.com/"/>
+  <updated>2016-12-06T05:00:25.555Z</updated>
+  <id>http://www.befuncool.com/</id>
+  
+  <author>
+    <name>569趣</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何自动化发布Hexo博客</title>
+    <link href="http://www.befuncool.com/2016/12/05/auto-upload-hexo/"/>
+    <id>http://www.befuncool.com/2016/12/05/auto-upload-hexo/</id>
+    <published>2016-12-05T19:33:45.000Z</published>
+    <updated>2016-12-06T05:00:25.555Z</updated>
+    
+    <content type="html"><![CDATA[<p>我们知道，可以配置好hexo后<code>hexo g -d</code>一个命令发布博客（可以看<a href="/2015/12/07/关于Hexo的几个知识整理/">这里</a>了解更多）。当然你说一大堆命令比较麻烦，也是偶办法解决的，可以写个脚本文件，一键运行即可。</p>
+<p>这样的方法看起来也不是很方便，但其实有时候我们只关注写文章的内容，我们想要的结果是，我们不需要部署<code>nodejs</code>等环境，写好<code>.md</code>文件提交后，我们的博客就会更新。这样的方式可行吗？答案是利用<code>Continuous integration</code>（<code>CI</code>）技术和<strong>所见即所得</strong>站点编辑器的结合实现。</p>
+<p>大体思路就是通过这样的架构解决：<code>Github</code> + <code>Travis CI</code> +  <code>Prose</code> 。下面我们来说一下具体怎么弄。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我们知道，可以配置好hexo后&lt;code&gt;hexo g -d&lt;/code&gt;一个命令发布博客（可以看&lt;a href=&quot;/2015/12/07/关于Hexo的几个知识整理/&quot;&gt;这里&lt;/a&gt;了解更多）。当然你说一大堆命令比较麻烦，也是偶办法解决的，可以写个脚本文件，一键运行即可。
+    
+    </summary>
+    
+      <category term="hexo" scheme="http://www.befuncool.com/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="http://www.befuncool.com/tags/hexo/"/>
+    
+      <category term="自动化" scheme="http://www.befuncool.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/"/>
+    
+      <category term="Travis CI" scheme="http://www.befuncool.com/tags/Travis-CI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>生活奇技总结</title>
+    <link href="http://www.befuncool.com/2016/12/05/some-life-skill/"/>
+    <id>http://www.befuncool.com/2016/12/05/some-life-skill/</id>
+    <published>2016-12-05T18:31:38.000Z</published>
+    <updated>2016-12-06T05:00:25.555Z</updated>
+    
+    <content type="html"><![CDATA[<img src="http://afirsraftgarrier.qiniudn.com/qyjq.png" class="full-image">
+<p>生活是需要技巧的。有时候总有这样那样的烦恼，可是在某些人看来这些都不是问题。这之中的关键点就是，要掌握某些奇技，这些东西可能是困扰你好久，你却以各种理由推脱不去解决的，实际上掌握了，你的生活会更美好。如果你觉得有用，一起跟随<a href="/"><strong>必富客</strong></a>，创造美好明天！</p>
+<p>下面就列举下生活中的一些奇技。</p>
+<h5 id="VPN怎么弄？"><a href="#VPN怎么弄？" class="headerlink" title="VPN怎么弄？"></a>VPN怎么弄？</h5><p>VPN可能是困扰大家好久的问题，特别是技术人员。翻墙，眼界当然会宽一点。那么用什么工具呢？想要免费的怎么弄？有很多软件，各个稳定性不一样。这里推荐用<code>Lantern</code>。如果是<code>Mac</code>系统(或者干脆装个虚拟机)，那有个工具，通过一个小技巧，可以免费不限时享用VPN（当然这个东西最好不要扩散，知道的人多了，这个功能也会被屏蔽），想要知道的联系<strong>必富客</strong>。</p>
+<h5 id="淘宝买东西能优惠吗？"><a href="#淘宝买东西能优惠吗？" class="headerlink" title="淘宝买东西能优惠吗？"></a>淘宝买东西能优惠吗？</h5><p>很早的时候，都不会用插件买东西，导致价格行情都不知道，随大流。实际上浏览器有很多插件可以比价，帮你做出更好选择。另外有一个省钱方法估计很多人不会用，可以通过<code>阿里妈妈</code>自己代理自己买来省钱，这个也就几秒钟的问题，确是可以省钱的。</p>
+<h5 id="我不小心开了好多标签窗。"><a href="#我不小心开了好多标签窗。" class="headerlink" title="我不小心开了好多标签窗。"></a>我不小心开了好多标签窗。</h5><p>浏览器好卡，占用太多内存，可是那些窗口又不舍得关掉，怎么办？答案是可以添加标签，然后全部关掉。当然也可以借助很多浏览器插件来管理标签栏，比如<code>snooze</code>，都比较方便。另外注意到浏览器的同步功能，像<code>Chrome</code>可以同步标签栏、历史记录、打开的标签窗口等。<code>Mac</code>上的<code>safari</code>很方便，你在电脑上的标签、历史记录，可以同步到<code>iphone</code>上，估计会有些人不知道。</p>
+<h5 id="现在还有同步盘吗？"><a href="#现在还有同步盘吗？" class="headerlink" title="现在还有同步盘吗？"></a>现在还有同步盘吗？</h5><p>很多网盘现在都没有这个同步功能了。现在有一个叫<code>坚果云</code>的，可以同步文件。</p>
+<h5 id="密码好多，怎么办？"><a href="#密码好多，怎么办？" class="headerlink" title="密码好多，怎么办？"></a>密码好多，怎么办？</h5><p>可以用<code>Lastpass</code>，帮你记录密码，一些浏览器也可以装相应插件，方便多了。另外提醒：一些重要密码还是要记住，你可以用比如<code>有道云笔记</code>等记录，当然是要做提示的记录，用到的时候搜索，这样更安全。还有，像QQ什么的，可以用手机二维码扫描登录的，这样方便快捷安全。</p>
+<h5 id="哇，视频的广告真烦人。"><a href="#哇，视频的广告真烦人。" class="headerlink" title="哇，视频的广告真烦人。"></a>哇，视频的广告真烦人。</h5><p>怎么破？很多老实人就这样无端忍受视频网站的广告轰炸。什么<code>范屁打天下</code>，整天听得都烦了。答案是可以安装一些浏览器插件，来对广告进行屏蔽。注意这样的方式可能广告是屏蔽了，但时间还是浪费了，具体解决方法可以参考<a href="/2016/12/05/delete-youku-ads/">这里</a>。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;img src=&quot;http://afirsraftgarrier.qiniudn.com/qyjq.png&quot; class=&quot;full-image&quot;&gt;
+&lt;p&gt;生活是需要技巧的。有时候总有这样那样的烦恼，可是在某些人看来这些都不是问题。这之中的关键点就是，要掌握某些奇技，这些东西可
+    
+    </summary>
+    
+      <category term="奇技" scheme="http://www.befuncool.com/categories/%E5%A5%87%E6%8A%80/"/>
+    
+    
+      <category term="奇技" scheme="http://www.befuncool.com/tags/%E5%A5%87%E6%8A%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于.gitmodules(GIT子模块)</title>
+    <link href="http://www.befuncool.com/2016/12/05/about-sub-module/"/>
+    <id>http://www.befuncool.com/2016/12/05/about-sub-module/</id>
+    <published>2016-12-05T18:19:46.000Z</published>
+    <updated>2016-12-06T05:00:25.555Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>有时候有这样的需求，怎样把系统代码分模块，更好地重用代码。 </p>
+</blockquote>
+<h5 id="如何添加子模块？"><a href="#如何添加子模块？" class="headerlink" title="如何添加子模块？"></a>如何添加子模块？</h5>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote class=&quot;blockquote-center&quot;&gt;&lt;p&gt;有时候有这样的需求，怎样把系统代码分模块，更好地重用代码。 &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&quot;如何添加子模块？&quot;&gt;&lt;a href=&quot;#如何添加子模块？&quot; class=&quot;heade
+    
+    </summary>
+    
+      <category term="GIT" scheme="http://www.befuncool.com/categories/GIT/"/>
+    
+    
+      <category term="GIT" scheme="http://www.befuncool.com/tags/GIT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>怎么去除优酷广告</title>
+    <link href="http://www.befuncool.com/2016/12/05/delete-youku-ads/"/>
+    <id>http://www.befuncool.com/2016/12/05/delete-youku-ads/</id>
+    <published>2016-12-05T11:37:25.000Z</published>
+    <updated>2016-12-06T05:00:25.555Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>优酷越来越放肆了，其广告时间从原来十几秒上升到现在几乎两分钟。 </p>
+</blockquote>
+<p>也不会像别家的广告，可以点击关闭。无法忍受这漫长的广告怎么办？跟我来！</p>
+<h1 id="去除优酷广告的方法"><a href="#去除优酷广告的方法" class="headerlink" title="去除优酷广告的方法"></a>去除优酷广告的方法</h1><h6 id="1-安装浏览器插件或通过某些限制广告访问的软件"><a href="#1-安装浏览器插件或通过某些限制广告访问的软件" class="headerlink" title="1. 安装浏览器插件或通过某些限制广告访问的软件"></a>1. 安装浏览器插件或通过某些限制广告访问的软件</h6><p>这种方法估计是比较简单，但易被优酷察觉，虽然广告是不播了，但还是要等那么长时间视频才播。</p>
+<h6 id="2-自己修改hosts文件"><a href="#2-自己修改hosts文件" class="headerlink" title="2. 自己修改hosts文件"></a>2. 自己修改<code>hosts</code>文件</h6><p>打开<code>hosts</code>文件(这个文件在Mac下是在<code>/private/etc</code>下，在Windows下大概是在<code>C:\Windows\System32\drivers\etc</code>下)，在后面添加如下代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">#优酷</div><div class="line">127.0.0.1 atm.youku.com</div><div class="line">127.0.0.1 Fvid.atm.youku.com</div><div class="line">127.0.0.1 html.atm.youku.com</div><div class="line">127.0.0.1 valb.atm.youku.com</div><div class="line">127.0.0.1 valf.atm.youku.com</div><div class="line">127.0.0.1 valo.atm.youku.com</div><div class="line">127.0.0.1 valp.atm.youku.com</div><div class="line">127.0.0.1 lstat.youku.com</div><div class="line">127.0.0.1 speed.lstat.youku.com</div><div class="line">127.0.0.1 urchin.lstat.youku.com</div><div class="line">127.0.0.1 stat.youku.com</div><div class="line">127.0.0.1 static.lstat.youku.com</div><div class="line">127.0.0.1 valc.atm.youku.com</div><div class="line">127.0.0.1 vid.atm.youku.com</div><div class="line">127.0.0.1 walp.atm.youku.com</div></pre></td></tr></table></figure>
+<p>这样的方式是屏蔽了广告，而且优酷不会察觉（注意前提是之前浏览器没装被优酷识别的插件）。</p>
+<h6 id="3-可以试试这里"><a href="#3-可以试试这里" class="headerlink" title="3. 可以试试这里"></a>3. 可以试试这里</h6><a id="more"></a>
+<p>下面只需要将优酷视频的<code>url</code>填入，然后提交即可：</p>
+
+<script type="text/javascript">
+    function actionVedio() {
+        var url = document.getElementById('url').value;
+        var patternReg = /X\w+=*(?=\.)/;
+        var result = patternReg.exec(url);
+        if (result != null) {
+        } else {
+            document.getElementById('error').style.display = '';
+            return;
+        }
+        document.getElementById("frame").src = "http://www.haofangyuan.net/youku/videoyk.jsp?token=v&width=620&height=400&auto=yes&id=" + result[0];
+    }
+
+    function onInput() {
+        document.getElementById('error').style.display = 'none';
+    }
+</script>
+
+<div style="text-align: center"><br>    <iframe src="http://www.haofangyuan.net/youku/videoyk.jsp?token=v&width=620&height=400&auto=no&id=XMzQ5MjAzNjg=" width="620" height="400" marginheight="0" marginwidth="0" frameborder="0" scrolling="no" id="frame"></iframe><br>    <br><br>    <br><br>    <br><br>    <br><br>    <form action="javascript:actionVedio()" method="get" style="text-align: center"><br>        视频地址: <input type="url" name="user_email" id="url" oninput="onInput()"><span style="color: red;margin-left: 10px;display: none;" id="error">请确定是优酷视频地址然后重试</span><br>    </form><br></div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote class=&quot;blockquote-center&quot;&gt;&lt;p&gt;优酷越来越放肆了，其广告时间从原来十几秒上升到现在几乎两分钟。 &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;也不会像别家的广告，可以点击关闭。无法忍受这漫长的广告怎么办？跟我来！&lt;/p&gt;
+&lt;h1 id=&quot;去除优酷广告的方法&quot;&gt;&lt;a href=&quot;#去除优酷广告的方法&quot; class=&quot;headerlink&quot; title=&quot;去除优酷广告的方法&quot;&gt;&lt;/a&gt;去除优酷广告的方法&lt;/h1&gt;&lt;h6 id=&quot;1-安装浏览器插件或通过某些限制广告访问的软件&quot;&gt;&lt;a href=&quot;#1-安装浏览器插件或通过某些限制广告访问的软件&quot; class=&quot;headerlink&quot; title=&quot;1. 安装浏览器插件或通过某些限制广告访问的软件&quot;&gt;&lt;/a&gt;1. 安装浏览器插件或通过某些限制广告访问的软件&lt;/h6&gt;&lt;p&gt;这种方法估计是比较简单，但易被优酷察觉，虽然广告是不播了，但还是要等那么长时间视频才播。&lt;/p&gt;
+&lt;h6 id=&quot;2-自己修改hosts文件&quot;&gt;&lt;a href=&quot;#2-自己修改hosts文件&quot; class=&quot;headerlink&quot; title=&quot;2. 自己修改hosts文件&quot;&gt;&lt;/a&gt;2. 自己修改&lt;code&gt;hosts&lt;/code&gt;文件&lt;/h6&gt;&lt;p&gt;打开&lt;code&gt;hosts&lt;/code&gt;文件(这个文件在Mac下是在&lt;code&gt;/private/etc&lt;/code&gt;下，在Windows下大概是在&lt;code&gt;C:\Windows\System32\drivers\etc&lt;/code&gt;下)，在后面添加如下代码：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;#优酷&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;127.0.0.1 atm.youku.com&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;127.0.0.1 Fvid.atm.youku.com&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;127.0.0.1 html.atm.youku.com&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;127.0.0.1 valb.atm.youku.com&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;127.0.0.1 valf.atm.youku.com&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;127.0.0.1 valo.atm.youku.com&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;127.0.0.1 valp.atm.youku.com&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;127.0.0.1 lstat.youku.com&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;127.0.0.1 speed.lstat.youku.com&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;127.0.0.1 urchin.lstat.youku.com&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;127.0.0.1 stat.youku.com&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;127.0.0.1 static.lstat.youku.com&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;127.0.0.1 valc.atm.youku.com&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;127.0.0.1 vid.atm.youku.com&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;127.0.0.1 walp.atm.youku.com&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这样的方式是屏蔽了广告，而且优酷不会察觉（注意前提是之前浏览器没装被优酷识别的插件）。&lt;/p&gt;
+&lt;h6 id=&quot;3-可以试试这里&quot;&gt;&lt;a href=&quot;#3-可以试试这里&quot; class=&quot;headerlink&quot; title=&quot;3. 可以试试这里&quot;&gt;&lt;/a&gt;3. 可以试试这里&lt;/h6&gt;
+    
+    </summary>
+    
+      <category term="奇技" scheme="http://www.befuncool.com/categories/%E5%A5%87%E6%8A%80/"/>
+    
+    
+      <category term="奇技" scheme="http://www.befuncool.com/tags/%E5%A5%87%E6%8A%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何将ApiDemos嵌入到自己的工程当中</title>
+    <link href="http://www.befuncool.com/2016/12/01/%E5%A6%82%E4%BD%95%E5%B0%86ApiDemos%E5%B5%8C%E5%85%A5%E5%88%B0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%B7%A5%E7%A8%8B%E5%BD%93%E4%B8%AD/"/>
+    <id>http://www.befuncool.com/2016/12/01/如何将ApiDemos嵌入到自己的工程当中/</id>
+    <published>2016-12-01T16:48:12.000Z</published>
+    <updated>2016-12-06T05:00:25.559Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://afirsraftgarrier.qiniudn.com/apidemos.jpg" class="full-image"></p>
+<p>题目看起来比较简单，考察的却是很多能力，要做好没那么简单。</p>
+<p>有许多人，用开源框架用得很六，但很多基本的原理都不知道。很多android API在<code>ApiDemos</code>这个项目里面都已经有例子，里面很多DEMO是值得我们去学习的，但实际是很多人都没有认真去看。现在比较流行用<code>gradle</code>来构建工程，可是找了半天，很难找到<code>ApiDemos</code>的<code>gradle</code>工程，有的也是比较旧的，错误百出。于是自己做了一个，如果你想看可以<a href="https://github.com/AfirSraftGarrier/ACCDemoAndroid" target="_blank" rel="external">来这</a>。下面总结一下将<code>ApiDemos</code>这个工程导入自己工程要注意的东西。</p>
+<h6 id="怎么下载到较新的ApiDemos源码？有这几种方法："><a href="#怎么下载到较新的ApiDemos源码？有这几种方法：" class="headerlink" title="怎么下载到较新的ApiDemos源码？有这几种方法："></a>怎么下载到较新的<code>ApiDemos</code>源码？有这几种方法：</h6><ol>
+<li>SDK自带，在SDK的<code>sample</code>目录下，这样要看SDK版本是否较新，还有之前有没有选择下载。</li>
+<li>网上搜索。这可能是最笨拙的方法，下载到也可能编译错误一大堆。</li>
+<li>到android <code>Github</code><a href="https://github.com/android/platform_development/tree/master/samples/ApiDemos" target="_blank" rel="external">镜像</a>下载。注意这里只要下载GITHUB工程的一部分，所以要用SVN下载，并且下载路径中的<code>tree/master</code>要换成<code>trunk</code>。</li>
+<li>直接到<a href="https://android.googlesource.com/platform/development.git" target="_blank" rel="external">官网</a>下载，这个可以直接下文件夹就可以。</li>
+</ol>
+<h6 id="怎么讲ApiDemos从eclipse工程变成gradle工程？有这些方法："><a href="#怎么讲ApiDemos从eclipse工程变成gradle工程？有这些方法：" class="headerlink" title="怎么讲ApiDemos从eclipse工程变成gradle工程？有这些方法："></a>怎么讲<code>ApiDemos</code>从<code>eclipse</code>工程变成<code>gradle</code>工程？有这些方法：</h6><ol>
+<li>可以先用eclipse导出一个<code>build.gradle</code>文件，然后用android studio通过<code>gradle</code>文件导入工程。</li>
+<li>用AS导入工程的时候选择<code>Eclipse ADT...</code>，这样很方便，但也不一定成功。</li>
+</ol>
+<h6 id="项目中的一些问题"><a href="#项目中的一些问题" class="headerlink" title="项目中的一些问题"></a>项目中的一些问题</h6><p>想不到像<code>google</code>这么大的公司也这么不重视细节，非常好的项目，却有这些低级问题。来说说遇到的问题和解决方法。</p>
+<ul>
+<li><code>preference_switch</code>不是xml文件问题，解决方法就是将其改为xml文件。</li>
+<li>No resource found that matches the given name (at ‘style’ with value ‘@android:style/Widget.Material.SeekBar.Discrete’)。如果遇到这类错误，请把鼠标移动到错误代码上，它会提示你怎么做。答案是要修改<code>compileSdkVersion</code>到合适的版本。</li>
+<li>程序包android.support.annotation不存在，这里有几种方法，可以通过<code>project structure</code>中添加<code>maven</code>依赖，也可以直接在<code>gradle</code>文件中添加依赖代码。这里是要添加<code>v4</code>依赖，当然也可以添加<code>v7</code>依赖，要注意<code>gradle</code>的语法，可以用<code>+</code>代替具体的版本号。另外有些错误，其实看工具提示就可以解决。</li>
+<li>com.google.android.mms找不到的问题，这个真搞不懂谷歌要做什么，这个包在SDK当中，有<code>@hide</code>标注，是不开放的。因此我们是无法在自己代码中import的。解决方法：可以自己修改源码，编一个SDK，太麻烦；可以自己用反射来实现，这样要修改<code>ApiDemos</code>大堆源码，很不方便；直接删掉相关demo，这个方法简单粗暴；将错误的地方注释掉，嗯，这个方法可以让它有个demo界面，但功能先暂时不管，比较可取。</li>
+</ul>
+<h6 id="如何将ApiDemos导入到自己的工程"><a href="#如何将ApiDemos导入到自己的工程" class="headerlink" title="如何将ApiDemos导入到自己的工程"></a>如何将<code>ApiDemos</code>导入到自己的工程</h6><p>也许这个问题很少人会去想。这也考验人解决项目集成问题能力，而不仅仅是在<code>gradle</code>里面加个<code>EventBus</code>库这么简单。考虑到要做个DEMO，这个demo要包含<code>ApiDemo</code>，而且包名要用自己的。有人说改个包名就可以了，很简单。但这里其实有许多问题要处理。</p>
+<ul>
+<li>首先将要集成的代码拷贝到相应的位置。这是后会有很多包名错误，不用管先。</li>
+<li>资源文件全局搜索，将包名改过来。</li>
+<li>代码全局搜索，将包名改过来。</li>
+<li>AIDL文件也用同样要修改。注意AIDL要放在aidl目录下，即本文的插图那样形式。</li>
+<li>将Manifest文件改过来，注意这是需要技巧的，很容易将文件改错，注意搜索匹配问题。</li>
+<li>按照原来的逻辑修改，这要熟悉下<code>ApiDemos.java</code>的巧妙逻辑(巧妙运用了activity的<code>name</code>和<code>label</code>标签)。</li>
+</ul>
+<p>这里面做一些android的多个DEMO集成可以考虑下参考<code>ApiDemos.java</code>的实现。如果要在原来的基础上加上一层目录的话，可以参考下<a href="https://github.com/AfirSraftGarrier/ACCDemoAndroid/blob/master/app/src/main/java/afirsraftgarrier/demoandroid/MainActivity.java" target="_blank" rel="external">这里</a>的修改。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://afirsraftgarrier.qiniudn.com/apidemos.jpg&quot; class=&quot;full-image&quot;&gt;&lt;/p&gt;
+&lt;p&gt;题目看起来比较简单，考察的却是很多能力，要做好没那么简单。&lt;/p&gt;
+&lt;p&gt;有许多人，用开源框架用得很
+    
+    </summary>
+    
+      <category term="android" scheme="http://www.befuncool.com/categories/android/"/>
+    
+    
+      <category term="android" scheme="http://www.befuncool.com/tags/android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo使用七牛注意事项</title>
+    <link href="http://www.befuncool.com/2016/11/28/Hexo%E4%BD%BF%E7%94%A8%E4%B8%83%E7%89%9B%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/"/>
+    <id>http://www.befuncool.com/2016/11/28/Hexo使用七牛注意事项/</id>
+    <published>2016-11-28T12:16:40.000Z</published>
+    <updated>2016-12-06T05:00:25.555Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://afirsraftgarrier.qiniudn.com/qiniu.png-bfcrg" class="full-image"></p>
+<p>我们知道Hexo静态博客可以免费部署在一些支持Pages服务的代码托管网站，但这样博客容量也是有限制的，并且如果图片都部署上去的话，访问速度肯定不如专业的图床提供的服务，还不用付出额外的空间。</p>
+<p>在国内，图床功能可以用微博图床或者七牛图床，当然还有其他很多<a href="http://neue.v2ex.com/t/303321" target="_blank" rel="external">图床</a>。有人还专门写了上传图片到图床的工具。这里写一下七牛图床使用要注意的事情。</p>
+<ul>
+<li>注意七牛存储分为私有空间和公有空间，私有空间获取图片需要<code>token</code>那些，公有空间不需要，直接在域名后面加上图片文件名即可访问。</li>
+<li>可以使用<a href="http://docs.qiniu.com/tools/v6/qrsync.html" target="_blank" rel="external">同步工具</a>来简化上传流程。因为除了文件名，其他都是确定的，因此我们只需要同步下文件即可。</li>
+<li>我们可以设置样式、样式分隔符。例如本篇的图片上的<code>必富客</code>便是七牛提供的水印功能。</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://afirsraftgarrier.qiniudn.com/qiniu.png-bfcrg&quot; class=&quot;full-image&quot;&gt;&lt;/p&gt;
+&lt;p&gt;我们知道Hexo静态博客可以免费部署在一些支持Pages服务的代码托管网站，但这样博客容量也是
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://www.befuncool.com/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="http://www.befuncool.com/tags/Hexo/"/>
+    
+      <category term="七牛，图床" scheme="http://www.befuncool.com/tags/%E4%B8%83%E7%89%9B%EF%BC%8C%E5%9B%BE%E5%BA%8A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用raphael绘制吉他谱</title>
+    <link href="http://www.befuncool.com/2016/11/28/%E7%94%A8raphael%E7%BB%98%E5%88%B6%E5%90%89%E4%BB%96%E8%B0%B1/"/>
+    <id>http://www.befuncool.com/2016/11/28/用raphael绘制吉他谱/</id>
+    <published>2016-11-28T11:27:56.000Z</published>
+    <updated>2016-12-06T05:00:25.563Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://afirsraftgarrier.qiniudn.com/guitar-build.jpg" class="full-image"></p>
+<p>最近试着修改了一个用<a href="http://dmitrybaranovskiy.github.io/raphael/" target="_blank" rel="external"><code>Raphael</code></a>绘制的吉他谱的网页。Raphael是一个可以在网页上绘制矢量图的JavaScript库，它使用<code>SVG</code>、<code>W3C</code>推荐和<code>VML</code>作为绘制图形的标准，也就是说其绘制的图形可以作为DOM节点。是一个非常方便的库，运用它可以绘制各种图表，各种几何图形，还可以进行图形的裁剪和旋转等操作。</p>
+<p>现在在网上常常看到有人在那问吉他谱。网上一大堆可以搜吉他谱的网站，可是大多是有广告、论坛需要注册什么的，非常不方便。给出的吉他谱大多是图片，各种各样格式的，还各种各样的标记，没有个标准。现在在吉他软件行业的大佬<code>Guitar pro</code>功能很强大，但给人以不开放的感觉。很多东西都收费，不能大众化。现在似乎迫切需要一个软件或网站，大家能通过它进行分享曲谱的，可目前似乎没有看到。</p>
+<p>要想是想<code>分享曲谱</code>，当然是用户可以自己制作曲谱。这个小软件目前还没有完善好。只是知道了怎么在网页上，给定一些数据，将数据画出一个吉他谱来，这部分功能现在也只是初步。</p>
+<p>我稍微改了下它。</p>
+<ul>
+<li>将传统的竖版的和弦图改成横版的。为什么？</li>
+</ul>
+<p>这可能跟最初画这些图的人的设计有关。和弦图竖直，六线谱横版，这两个有些不和谐。可能这对于熟悉的人没什么，但对于初学者以及人的直觉，这样的方式显然不如这两者都是横版来得直观。</p>
+<ul>
+<li>将传统的和弦图上<code>o</code>是空弦、<code>x</code>是不触碰，改成了现在的形式。为什么？</li>
+</ul>
+<p>现在只管看哪些弦是不触碰的，这样需要关注的东西减少了。并且我们将不能触碰的弦改成红色虚线状，这样就更简洁直观了。刚开始仅仅是用红线，后来想到了，用户可能要打印黑白文件，看不到颜色，故用虚线表示。</p>
+<ul>
+<li>把位符号用一个矩形和数字来表示，并配上颜色标示，这样显然要比传统的直观。</li>
+</ul>
+<p>想看DEMO的点<a href="/common/guitar-build-demo/demo.html">这里</a>。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://afirsraftgarrier.qiniudn.com/guitar-build.jpg&quot; class=&quot;full-image&quot;&gt;&lt;/p&gt;
+&lt;p&gt;最近试着修改了一个用&lt;a href=&quot;http://dmitrybaranovskiy.gi
+    
+    </summary>
+    
+      <category term="产品" scheme="http://www.befuncool.com/categories/%E4%BA%A7%E5%93%81/"/>
+    
+    
+      <category term="raphael" scheme="http://www.befuncool.com/tags/raphael/"/>
+    
+      <category term="产品" scheme="http://www.befuncool.com/tags/%E4%BA%A7%E5%93%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从煮饭悟到的道理</title>
+    <link href="http://www.befuncool.com/2016/11/28/%E4%BB%8E%E7%85%AE%E9%A5%AD%E6%82%9F%E5%88%B0%E7%9A%84%E9%81%93%E7%90%86/"/>
+    <id>http://www.befuncool.com/2016/11/28/从煮饭悟到的道理/</id>
+    <published>2016-11-28T11:21:34.000Z</published>
+    <updated>2016-12-06T05:00:25.559Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://afirsraftgarrier.qiniudn.com/cook-rice.jpg" class="full-image"></p>
+<h1 id="煮饭的好处"><a href="#煮饭的好处" class="headerlink" title="煮饭的好处"></a>煮饭的好处</h1><p>我常常煮饭，有空就煮饭，煮饭已经成了一个小爱好。我觉得煮饭的一些好处是：</p>
+<h6 id="1-煮饭比在外面吃经济实惠。"><a href="#1-煮饭比在外面吃经济实惠。" class="headerlink" title="1. 煮饭比在外面吃经济实惠。"></a>1. 煮饭比在外面吃经济实惠。</h6><p>这个就不用说了，比如说在外面快餐店吃是20元，那么在家可能只用10元就搞定，而且能吃到的菜更多，更有家的味道。去下馆子？那就更是了。</p>
+<h6 id="2-煮饭比在外面吃得干净健康。"><a href="#2-煮饭比在外面吃得干净健康。" class="headerlink" title="2. 煮饭比在外面吃得干净健康。"></a>2. 煮饭比在外面吃得干净健康。</h6><p>想必很少有人没听说过“地沟油”的。在外面吃的不放心。我有时候会在外面吃菜时吃到一些沙子，可想而知，店家并不注意清洗蔬菜，或者只是敷衍了事，因为认真洗菜在他看来没有给他带来额外收入。另外有时候会感觉菜有馊馊的味道，可能是店家放太久的缘故…总之，在外面吃东西总是让人有点不自在。除非时间紧迫，最好在家煮饭。</p>
+<h6 id="3-煮饭有时候是一种放松。"><a href="#3-煮饭有时候是一种放松。" class="headerlink" title="3. 煮饭有时候是一种放松。"></a>3. 煮饭有时候是一种放松。</h6><p>比如说有时候整理整理东西，有助于调解心情。煮饭一样，可以当成是一种放松。煮完饭，也有一种成就感，可以锻炼自己的厨艺，用到的时候可以展现一手。</p>
+<h1 id="煮饭的道理"><a href="#煮饭的道理" class="headerlink" title="煮饭的道理"></a>煮饭的道理</h1><p>煮饭肯定是一门学问，要想学好某一项，可能是要用一生去学习。在这之中，我发现一些道理：</p>
+<h6 id="1-人们常说，要用心，饭才能煮好。"><a href="#1-人们常说，要用心，饭才能煮好。" class="headerlink" title="1. 人们常说，要用心，饭才能煮好。"></a>1. 人们常说，要用心，饭才能煮好。</h6><p>我一开始不明白这个道理，后来自己煮饭，也感悟到了一些。让我们来看看不用心煮饭的效果：有可能，掏的米没有洗干净，饭里面有沙子；有可能，切的菜一大一小，坑坑洼洼，这样的菜煮得再好吃，看到是不是胃口减少？有可能，我们太急功近利了，还没等菜煮透，没有翻动，就匆忙上菜，这样的菜，有可能半生不熟，也不好吃。反之，用心的人，会关注菜是否洗干净了，有没有将菜上的农药泡掉；用心的人，会关注切菜的大小平整，这样煮出来才会均匀；用心的人，会关注火候，什么时候该用什么火；用心的人，甚至关注到配菜颜色、菜的摆放、装菜的盘子等等…</p>
+<h6 id="2-充分利用好时间。"><a href="#2-充分利用好时间。" class="headerlink" title="2. 充分利用好时间。"></a>2. 充分利用好时间。</h6><p>这个可能煮饭经验多的人都应该知道，但要做好也是要常思考的。这个很多初学者都不会，甚至是煮饭多年的人。这种我称之为<code>单线程</code>模式，我们要做的，其实是要开启<code>多线程</code>模式。怎么说呢？比如：我刚开始煮饭的时候，有时候会把一个菜洗了，切了然后煮。等煮好后，再去按这个流程去煮另外一样菜，最后等煮好了，发现饭没煮，于是去洗饭锅，开始煮饭。煮好饭了，发现碗没洗，这才去洗碗…这就是传说中的<code>单线程</code>，什么事都等前一件事完成了再去做接下来一件事。这样的方式产生的结果是，浪费太多的等待时间。</p>
+<p>那怎么开启<code>多线程</code>呢？也不是乱开的，线程开多了，对人这个系统消耗也大，我们要做的，是要达到减少等待时间，达到能够保证煮饭这件事有条不紊顺利进行，最终达到整体时间效益最大化。这就是一门学问，是要经过很多实践和思考才能得到的。比方说，可以先把饭煮着，这个饭只需要放在那，机器帮我们煮，就先把它弄好。然后炒菜，可能肯定有一段时间是不用掀锅的，如果这时候没什么事，可以搞搞蒜头、姜那些，或者可把碗先洗好了。</p>
+<h6 id="3-煮饭穿的衣服，要换下来。"><a href="#3-煮饭穿的衣服，要换下来。" class="headerlink" title="3. 煮饭穿的衣服，要换下来。"></a>3. 煮饭穿的衣服，要换下来。</h6><p>这当然是很明显的道理，可是很多人都没注意到，或者是嫌麻烦不这样做。可能少量的油烟，感觉不到，但那是真实存在的。刚煮好饭，衣服上大多一层油烟。还有，煮饭的时候，切菜炒菜什么的，难免衣服会弄脏，这有可能是没有任何察觉的。</p>
+<h6 id="4-变废为宝。"><a href="#4-变废为宝。" class="headerlink" title="4. 变废为宝。"></a>4. 变废为宝。</h6><p>有些在我们看来是废弃的东西，也许有些用途我们没发现。比方说淘米水，很多人淘完米就倒掉，殊不知淘米水可以用来洗碗，不仅去污力强，还不含化学物质。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://afirsraftgarrier.qiniudn.com/cook-rice.jpg&quot; class=&quot;full-image&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;煮饭的好处&quot;&gt;&lt;a href=&quot;#煮饭的好处&quot; class=&quot;headerlink&quot; t
+    
+    </summary>
+    
+      <category term="感悟" scheme="http://www.befuncool.com/categories/%E6%84%9F%E6%82%9F/"/>
+    
+    
+      <category term="感悟" scheme="http://www.befuncool.com/tags/%E6%84%9F%E6%82%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>简单图解JVM</title>
+    <link href="http://www.befuncool.com/2016/11/27/%E7%AE%80%E5%8D%95%E5%9B%BE%E8%A7%A3JVM/"/>
+    <id>http://www.befuncool.com/2016/11/27/简单图解JVM/</id>
+    <published>2016-11-27T10:42:18.000Z</published>
+    <updated>2016-12-06T05:00:25.563Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://afirsraftgarrier.qiniudn.com/right.jpg?attname=&amp;e=1480236491&amp;token=_bRGh5Foxbj_EBD_6qKWwYFEIVjx7PZSluciwDIT:ARXkMyMEh5rAm_JXDJKVj1VQjVI" alt=""></p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>写了多年Java程序，有没有想过我们的程序的加载和执行流程是怎样的呢？里面有哪些结构呢？本文尝试总结一下这些内容。</p>
+<h1 id="我们的代码"><a href="#我们的代码" class="headerlink" title="我们的代码"></a>我们的代码</h1><p>先来看看一个简单的Java程序<code>Hello.java</code>：<br><figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">package</span> com.acc.demo.java.hello;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by AfirSraftGarrier on 2016/11/27 0027.</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hello</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"Hello, world!"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>平时我们觉得很简单，只需要点击开发工具上的<code>run</code>按钮，结果便出来了：<br><figure class="highlight erlang-repl"><table><tr><td class="code"><pre><div class="line">Hello, world!</div></pre></td></tr></table></figure></p>
+<p>但如果麻烦一点，用命令行的话，是这么个流程：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line"># 首先配置好java开发环境</div><div class="line"># 编辑好Hello.java文件</div><div class="line">javac Hello.java</div><div class="line">java Hello</div></pre></td></tr></table></figure></p>
+<p>的到的结果是一样的。其实开发工具的<code>run</code>按钮，也就是命令行下执行<code>java</code>命令。这个命令将一切秘密打包了，直接给出我们想要的结果。这个背后的秘密，就是JVM。<code>java</code>这个命令，将会创建一个JVM实例，并将<code>javac</code>产生的<code>.class</code>字节码交给JVM做接下来的工作。好的，接下来正是进入JVM流程。</p>
+<h1 id="JVM结构图解"><a href="#JVM结构图解" class="headerlink" title="JVM结构图解"></a>JVM结构图解</h1><h6 id="JVM大致图解"><a href="#JVM大致图解" class="headerlink" title="JVM大致图解"></a>JVM大致图解</h6><h6 id="JVM进一步图解"><a href="#JVM进一步图解" class="headerlink" title="JVM进一步图解"></a>JVM进一步图解</h6><h6 id="ClassLoader"><a href="#ClassLoader" class="headerlink" title="ClassLoader"></a>ClassLoader</h6><h6 id="堆内存结构简述"><a href="#堆内存结构简述" class="headerlink" title="堆内存结构简述"></a>堆内存结构简述</h6>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://afirsraftgarrier.qiniudn.com/right.jpg?attname=&amp;amp;e=1480236491&amp;amp;token=_bRGh5Foxbj_EBD_6qKWwYFEIVjx7PZSluciwDIT:ARXk
+    
+    </summary>
+    
+      <category term="JVM" scheme="http://www.befuncool.com/categories/JVM/"/>
+    
+    
+      <category term="java" scheme="http://www.befuncool.com/tags/java/"/>
+    
+      <category term="JVM" scheme="http://www.befuncool.com/tags/JVM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android使用HTML5的例子</title>
+    <link href="http://www.befuncool.com/2016/11/27/android%E4%BD%BF%E7%94%A8html5%E7%9A%84%E4%BE%8B%E5%AD%90/"/>
+    <id>http://www.befuncool.com/2016/11/27/android使用html5的例子/</id>
+    <published>2016-11-27T10:41:54.000Z</published>
+    <updated>2016-12-06T05:00:25.555Z</updated>
+    
+    <content type="html"><![CDATA[<p>现在有些公司想做一些界面，不仅网页能用，手机应用也能用，这样的功能无疑用<a href="http://baike.baidu.com/item/html5" target="_blank" rel="external">HTML5</a>做比较好，<a href="http://www.runoob.com/html/html5-intro.html" target="_blank" rel="external">这里</a>有相关教程，我们现在来简单看下android里面怎么用HTML5，举个栗子…</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;现在有些公司想做一些界面，不仅网页能用，手机应用也能用，这样的功能无疑用&lt;a href=&quot;http://baike.baidu.com/item/html5&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;HTML5&lt;/a&gt;做比较好，&lt;a href=&quot;htt
+    
+    </summary>
+    
+      <category term="Android" scheme="http://www.befuncool.com/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="http://www.befuncool.com/tags/Android/"/>
+    
+      <category term="HTML5" scheme="http://www.befuncool.com/tags/HTML5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java的一些知识总结</title>
+    <link href="http://www.befuncool.com/2016/11/26/Java%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"/>
+    <id>http://www.befuncool.com/2016/11/26/Java的一些知识总结/</id>
+    <published>2016-11-26T18:22:27.000Z</published>
+    <updated>2016-12-06T05:00:25.555Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="java" scheme="http://www.befuncool.com/categories/java/"/>
+    
+    
+      <category term="java" scheme="http://www.befuncool.com/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java方法到底是传值还是传引用</title>
+    <link href="http://www.befuncool.com/2016/11/25/java%E6%96%B9%E6%B3%95%E5%88%B0%E5%BA%95%E6%98%AF%E4%BC%A0%E5%80%BC%E8%BF%98%E6%98%AF%E4%BC%A0%E5%BC%95%E7%94%A8/"/>
+    <id>http://www.befuncool.com/2016/11/25/java方法到底是传值还是传引用/</id>
+    <published>2016-11-25T23:44:53.000Z</published>
+    <updated>2016-12-06T05:00:25.555Z</updated>
+    
+    <content type="html"><![CDATA[<p>先来看<a href="https://github.com/AfirSraftGarrier/ACCDemoJava/blob/master/src/com/acc/demo/java/pre/ExecutorServiceTest.java" target="_blank" rel="external">代码</a>：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MethodParamTest</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">change</span><span class="params">(<span class="keyword">int</span> intNumm)</span> </span>&#123;</div><div class="line">        intNumm = <span class="number">10</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">change</span><span class="params">(String string)</span> </span>&#123;</div><div class="line">        string = <span class="string">"Another string..."</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">change</span><span class="params">(StringBuilder stringBuilder)</span> </span>&#123;</div><div class="line">        stringBuilder.append(<span class="string">" append..."</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">TestClass</span> </span>&#123;</div><div class="line">        <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</div><div class="line">            <span class="keyword">return</span> name;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</div><div class="line">            <span class="keyword">this</span>.name = name;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">private</span> String name;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">change</span><span class="params">(TestClass testClass)</span> </span>&#123;</div><div class="line">        testClass.setName(<span class="string">"Hi, i'm changed..."</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> intNum = <span class="number">99</span>;</div><div class="line">        change(intNum);</div><div class="line">        System.out.println(<span class="string">"After change, intNum is: "</span> + intNum);</div><div class="line">        String string = <span class="string">"Original string..."</span>;</div><div class="line">        change(string);</div><div class="line">        System.out.println(<span class="string">"After change, string is: "</span> + string);</div><div class="line">        StringBuilder stringBuilder = <span class="keyword">new</span> StringBuilder(string);</div><div class="line">        change(stringBuilder);</div><div class="line">        System.out.println(<span class="string">"After change, stringBuilder is: "</span> + stringBuilder);</div><div class="line">        TestClass testClass = <span class="keyword">new</span> TestClass();</div><div class="line">        testClass.setName(<span class="string">"Hi, i'm acc..."</span>);</div><div class="line">        change(testClass);</div><div class="line">        System.out.println(<span class="string">"After change, testClass's name is: "</span> + testClass.getName());</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>先来看看输出结果：<br><figure class="highlight vhdl"><table><tr><td class="code"><pre><div class="line"><span class="keyword">After</span> change, intNum <span class="keyword">is</span>: <span class="number">99</span></div><div class="line"><span class="keyword">After</span> change, <span class="built_in">string</span> <span class="keyword">is</span>: Original <span class="built_in">string</span>...</div><div class="line"><span class="keyword">After</span> change, stringBuilder <span class="keyword">is</span>: Original <span class="built_in">string</span>... append...</div><div class="line"><span class="keyword">After</span> change, testClass<span class="symbol">'s</span> name <span class="keyword">is</span>: Hi, i<span class="symbol">'m</span> changed...</div></pre></td></tr></table></figure></p>
+<p>我们发现这里有个疑惑，为什么<code>string</code>的值没有改变呢？我们都说<code>String</code>是一个引用类型。既然是引用类型，那应该是要变化才对啊。如果有<code>c/c++</code>知识的话，这里就更加迷惑。这里面究竟有什么道理呢？</p>
+<p>首先我们来看Java里面的<code>=</code>是怎样操作的，也就可以理解传参数的时候，到底怎么传的。我们知道，对于变量，都会在栈内存里面分配一个地址，然后在后面跟着存放变量的值。这个变量的值，对于基本数据类型来讲是对应的基本数值，而对于引用变量来讲则是指向堆内存的一个内存地址(也就是引用变量的对象地址)。我们这里不管这个值是什么，姑且都叫做<code>变量的值</code>。这样定义之后，Java的<code>=</code>就好解释了，它就是将<code>=</code>右边变量的值拷贝到左边。传递参数也是这样，没什么神秘的。</p>
+<p>那好了，既然上文<code>string</code>是引用变量，传递参数时，将其变量值即堆内存里面对象地址传了过去，为什么还是那样的结果呢？秘密同样在这个<code>=</code>，对于<code>String</code>(对于基本类型包装类一样)，<code>&quot;A String&quot;</code>其实是在编译器已确定好的，对应<code>常量池</code>中的一块内存地址，这样也就是说<code>string = &quot;Another string...&quot;</code>就相当于将<code>String</code>变量的数值地址改变，而不是改变原来地址对应对象的值，因此调用<code>change</code>方法后，并没有改变，这也就解决了迷惑了。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>Java传递参数的时候，可以说都是传值的，这个值对于基本类型来讲，就是数值；对于引用来讲，就是对象地址。</li>
+<li>注意<a href="http://baike.baidu.com/item/常量池" target="_blank" rel="external">常量池</a>的概念，将一个字符串赋值给变量时，其实是要将这个变量的对象地址改变的。</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;先来看&lt;a href=&quot;https://github.com/AfirSraftGarrier/ACCDemoJava/blob/master/src/com/acc/demo/java/pre/ExecutorServiceTest.java&quot; target=&quot;_blan
+    
+    </summary>
+    
+      <category term="java" scheme="http://www.befuncool.com/categories/java/"/>
+    
+    
+      <category term="java" scheme="http://www.befuncool.com/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android的一些知识总结</title>
+    <link href="http://www.befuncool.com/2016/11/24/Android%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"/>
+    <id>http://www.befuncool.com/2016/11/24/Android的一些知识总结/</id>
+    <published>2016-11-24T21:27:09.000Z</published>
+    <updated>2016-12-06T05:00:25.551Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ibatis简述</title>
+    <link href="http://www.befuncool.com/2016/11/24/ibatis%E7%AE%80%E8%BF%B0/"/>
+    <id>http://www.befuncool.com/2016/11/24/ibatis简述/</id>
+    <published>2016-11-24T18:01:33.000Z</published>
+    <updated>2016-12-06T05:00:25.555Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h1><p><code>iBATIS</code>在2010年被Google改名为<code>MyBatis</code>，是一个基于SQL映射的持久层框架。</p>
+<p><code>iBATIS</code>属于半自动化<code>ORM</code>(Object Relation Mapping)，相比全自动化<code>ORM</code>如<code>Hibernate</code>，数据库和<code>POJO</code>(Plain Ordinary Java Object)之间多了层配置层(xml)。其结构如下图：</p>
+<p><img src="/images/ibatis-map.jpg" class="full-image"></p>
+<h1 id="什么时候用iBATIS而不用Hibernate？"><a href="#什么时候用iBATIS而不用Hibernate？" class="headerlink" title="什么时候用iBATIS而不用Hibernate？"></a>什么时候用<code>iBATIS</code>而不用<code>Hibernate</code>？</h1><ul>
+<li>当要求不公开表结构给开发人员时。</li>
+<li>需要对SQL语句优化时。</li>
+<li>需要映射一些第三方数据库，或是遗留下来的数据库，或是一个设计很差的数据库，这时。</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;简述&quot;&gt;&lt;a href=&quot;#简述&quot; class=&quot;headerlink&quot; title=&quot;简述&quot;&gt;&lt;/a&gt;简述&lt;/h1&gt;&lt;p&gt;&lt;code&gt;iBATIS&lt;/code&gt;在2010年被Google改名为&lt;code&gt;MyBatis&lt;/code&gt;，是一个基于SQL映射的持久层
+    
+    </summary>
+    
+      <category term="Java框架" scheme="http://www.befuncool.com/categories/Java%E6%A1%86%E6%9E%B6/"/>
+    
+    
+      <category term="ibatis" scheme="http://www.befuncool.com/tags/ibatis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Markdown操作汇总</title>
+    <link href="http://www.befuncool.com/2016/11/23/Markdown%E6%93%8D%E4%BD%9C%E6%B1%87%E6%80%BB/"/>
+    <id>http://www.befuncool.com/2016/11/23/Markdown操作汇总/</id>
+    <published>2016-11-23T16:06:23.000Z</published>
+    <updated>2016-12-06T05:00:25.555Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/markdown.jpg" class="full-image"></p>
+<p>现在写博客等常用到Markdown，为了方便查找，做个记录。</p>
+<p>Markdown是用<code>perl</code>写的，将<code>text</code>文件按标记转成<code>html</code>文件的工具，可以看看其作者的<a href="http://daringfireball.net/projects/markdown/syntax" target="_blank" rel="external">介绍</a>。下面来总结下它的用法。</p>
+<h1 id="1-标题"><a href="#1-标题" class="headerlink" title="1. 标题"></a>1. 标题</h1><p>标题只有六级，用<code>#</code>来表示，这个符号越多表示标题越小。</p>
+<figure class="highlight clean"><table><tr><td class="code"><pre><div class="line"># 一级标题</div><div class="line">## 二级标题</div><div class="line">### 三级标题</div><div class="line">#### 四级标题</div><div class="line">##### 五级标题</div><div class="line">###### 六级标题</div></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><h1 id="2-列表"><a href="#2-列表" class="headerlink" title="2. 列表"></a>2. 列表</h1><h4 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h4><p>即没顺序的列表(注意列表下面要留一空行，否则会出现下面的标签解析错误情况)。<br><figure class="highlight asciidoc"><table><tr><td class="code"><pre><div class="line"><span class="bullet">* </span>列表一</div><div class="line"><span class="bullet">* </span>列表二</div><div class="line"><span class="bullet">* </span>列表三</div></pre></td></tr></table></figure></p>
+<p>效果如下：</p>
+<ul>
+<li>列表一</li>
+<li>列表二</li>
+<li>列表三</li>
+</ul>
+<a id="more"></a>
+<h4 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h4><p>即有顺序的列表(注意到这里序号并不重要)。<br><figure class="highlight markdown"><table><tr><td class="code"><pre><div class="line"><span class="bullet">2. </span>列表一</div><div class="line"><span class="bullet">1. </span>列表二</div><div class="line"><span class="bullet">5. </span>列表三</div></pre></td></tr></table></figure></p>
+<p>效果如下：</p>
+<ol>
+<li>列表一</li>
+<li>列表二</li>
+<li>列表三</li>
+</ol>
+<h4 id="二级列表"><a href="#二级列表" class="headerlink" title="二级列表"></a>二级列表</h4><p>用<code>tab</code>再加个<code>*</code>号(注意更高级列表同理)：<br><figure class="highlight stata"><table><tr><td class="code"><pre><div class="line"><span class="comment">* 这是一级列表</span></div><div class="line"><span class="comment">    * 这是二级列表</span></div></pre></td></tr></table></figure></p>
+<p>效果是：</p>
+<ul>
+<li>这是一级列表<ul>
+<li>这是二级列表</li>
+</ul>
+</li>
+</ul>
+<h1 id="3-引用"><a href="#3-引用" class="headerlink" title="3. 引用"></a>3. 引用</h1><p>使用<code>&gt;</code>表示引用(注意同上面列表也可以做二级)：<br><figure class="highlight markdown"><table><tr><td class="code"><pre><div class="line"><span class="quote">&gt; 这是引用</span></div></pre></td></tr></table></figure></p>
+<p>效果：</p>
+<blockquote>
+<p>这是引用</p>
+</blockquote>
+<h1 id="4-行内代码块"><a href="#4-行内代码块" class="headerlink" title="4. 行内代码块"></a>4. 行内代码块</h1><p>使用`代码块`表示行内代码块：<br><figure class="highlight clean"><table><tr><td class="code"><pre><div class="line">这是`行内代码块`</div></pre></td></tr></table></figure></p>
+<p>效果：<br>这是<code>行内代码块</code></p>
+<h1 id="5-代码块"><a href="#5-代码块" class="headerlink" title="5. 代码块"></a>5. 代码块</h1><h4 id="普通代码块"><a href="#普通代码块" class="headerlink" title="普通代码块"></a>普通代码块</h4><p>四个缩进空格表示代码块：<br><figure class="highlight"><table><tr><td class="code"><pre><div class="line">前面是四个空格</div></pre></td></tr></table></figure></p>
+<p>效果是：</p>
+<pre><code>前面是四个空格
+</code></pre><h4 id="加强版代码块"><a href="#加强版代码块" class="headerlink" title="加强版代码块"></a>加强版代码块</h4><p>支持多种语言，如<code>python</code>代码块，则用```python打头，```结尾(注意要根据不同语言选择不同头)，如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><div class="line">```python</div><div class="line"><span class="meta">@requires_authorization</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">somefunc</span><span class="params">(param1=<span class="string">''</span>, param2=<span class="number">0</span>)</span>:</span></div><div class="line">    <span class="string">'''A docstring'''</span></div><div class="line">    <span class="keyword">if</span> param1 &gt; param2: <span class="comment"># interesting</span></div><div class="line">        <span class="keyword">print</span> <span class="string">'Greater'</span></div><div class="line">    <span class="keyword">return</span> (param2 - param1 + <span class="number">1</span>) <span class="keyword">or</span> <span class="keyword">None</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">SomeClass</span>:</span></div><div class="line">    <span class="keyword">pass</span></div><div class="line">```.</div></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><div class="line"><span class="meta">@requires_authorization</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">somefunc</span><span class="params">(param1=<span class="string">''</span>, param2=<span class="number">0</span>)</span>:</span></div><div class="line">    <span class="string">'''A docstring'''</span></div><div class="line">    <span class="keyword">if</span> param1 &gt; param2: <span class="comment"># interesting</span></div><div class="line">        <span class="keyword">print</span> <span class="string">'Greater'</span></div><div class="line">    <span class="keyword">return</span> (param2 - param1 + <span class="number">1</span>) <span class="keyword">or</span> <span class="keyword">None</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">SomeClass</span>:</span></div><div class="line">    <span class="keyword">pass</span></div></pre></td></tr></table></figure>
+<h1 id="6-删除线"><a href="#6-删除线" class="headerlink" title="6. 删除线"></a>6. 删除线</h1><p>使用 ~~ 表示删除线。如：</p>
+<figure class="highlight haml"><table><tr><td class="code"><pre><div class="line">~~错误文本~~</div></pre></td></tr></table></figure>
+<p>效果是：</p>
+<p><del>错误文本</del></p>
+<h1 id="7-斜体和粗体"><a href="#7-斜体和粗体" class="headerlink" title="7. 斜体和粗体"></a>7. 斜体和粗体</h1><p>使用 * 和 ** 分别表示斜体和粗体。如：<br><figure class="highlight asciidoc"><table><tr><td class="code"><pre><div class="line">这是 <span class="strong">*斜体*</span>，这是 *<span class="strong">*粗体*</span><span class="strong">*。</span></div></pre></td></tr></table></figure></p>
+<p>效果是：<br>这是 <em>斜体</em>，这是 <strong>粗体</strong>。</p>
+<h1 id="8-图片和链接"><a href="#8-图片和链接" class="headerlink" title="8. 图片和链接"></a>8. 图片和链接</h1><h4 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h4><p>形式是 [链接名称](链接URL) 如：<br><figure class="highlight markdown"><table><tr><td class="code"><pre><div class="line">这是[<span class="string">链接</span>](<span class="link">www.befuncool.com</span>)</div></pre></td></tr></table></figure></p>
+<p>效果是：<br>这是<a href="www.befuncool.com">链接</a></p>
+<h4 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h4><p>形式是 ![图片名称](图片URL) 如：<br><figure class="highlight markdown"><table><tr><td class="code"><pre><div class="line">这是图片![<span class="string">我的头像</span>](<span class="link">http://www.befuncool.com/images/default_avatar.jpg</span>)</div></pre></td></tr></table></figure></p>
+<p>效果是：<br>这是图片<img src="http://www.befuncool.com/images/default_avatar.jpg" alt="图片名字"></p>
+<h1 id="9-表格"><a href="#9-表格" class="headerlink" title="9. 表格"></a>9. 表格</h1><p>支持表格(请注意对比符号的意思，如—-:表示居右)：</p>
+<figure class="highlight gherkin"><table><tr><td class="code"><pre><div class="line">|<span class="string"> 项目        </span>|<span class="string"> 价格   </span>|<span class="string">  数量  </span>|</div><div class="line">|<span class="string"> --------   </span>|<span class="string"> -----:  </span>|<span class="string"> :----:  </span>|</div><div class="line">|<span class="string"> 计算机     </span>|<span class="string"> \$1600 </span>|<span class="string">   5     </span>|</div><div class="line">|<span class="string"> 手机        </span>|<span class="string">   \$12   </span>|<span class="string">   12   </span>|</div><div class="line">|<span class="string"> 管线        </span>|<span class="string">    \$1    </span>|<span class="string">  234  </span>|</div></pre></td></tr></table></figure>
+<p>效果是：</p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th style="text-align:right">价格</th>
+<th style="text-align:center">数量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>计算机</td>
+<td style="text-align:right">\$1600</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td>手机</td>
+<td style="text-align:right">\$12</td>
+<td style="text-align:center">12</td>
+</tr>
+<tr>
+<td>管线</td>
+<td style="text-align:right">\$1</td>
+<td style="text-align:center">234</td>
+</tr>
+</tbody>
+</table>
+<h1 id="10-分割线"><a href="#10-分割线" class="headerlink" title="10. 分割线"></a>10. 分割线</h1><p>三个*即可：<br><figure class="highlight markdown"><table><tr><td class="code"><pre><div class="line"><span class="emphasis">***</span></div></pre></td></tr></table></figure></p>
+<p>效果：</p>
+<hr>
+<h1 id="11-特殊字符和html标签"><a href="#11-特殊字符和html标签" class="headerlink" title="11. 特殊字符和html标签"></a>11. 特殊字符和<code>html</code>标签</h1><p>如想输入特殊字符如`,则可以加个反斜杠如\`</p>
+<p>可直接嵌入<code>html</code>标签：<br><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">th</span> <span class="attr">rowspan</span>=<span class="string">"2"</span>&gt;</span>值班人员<span class="tag">&lt;/<span class="name">th</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">th</span>&gt;</span>星期一<span class="tag">&lt;/<span class="name">th</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">th</span>&gt;</span>星期二<span class="tag">&lt;/<span class="name">th</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">th</span>&gt;</span>星期三<span class="tag">&lt;/<span class="name">th</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>李强<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>张明<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>王平<span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>效果是：</p>
+<table><br>    <tr><br>        <th rowspan="2">值班人员</th><br>        <th>星期一</th><br>        <th>星期二</th><br>        <th>星期三</th><br>    </tr><br>    <tr><br>        <td>李强</td><br>        <td>张明</td><br>        <td>王平</td><br>    </tr><br></table>
+
+<h1 id="12-插件"><a href="#12-插件" class="headerlink" title="12. 插件"></a>12. 插件</h1><p>下面的插件可以解析更多标记，有流程图，甘特图等…（注意：有些标记不是通用的，比如目录语法和脚注语法，可以通过插件来做。）</p>
+<ul>
+<li>数学公式<a href="http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference" target="_blank" rel="external">MathJax</a></li>
+<li>流程图<a href="http://adrai.github.io/flowchart.js/" target="_blank" rel="external">flowchart</a></li>
+<li><a href="http://bramp.github.io/js-sequence-diagrams/" target="_blank" rel="external">序列图</a></li>
+<li><a href="https://knsv.github.io/mermaid/#gant-diagrams" target="_blank" rel="external">甘特图</a></li>
+<li>图标<a href="http://fortawesome.github.io/Font-Awesome/3.2.1/icons/" target="_blank" rel="external">font-awesome</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/markdown.jpg&quot; class=&quot;full-image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;现在写博客等常用到Markdown，为了方便查找，做个记录。&lt;/p&gt;
+&lt;p&gt;Markdown是用&lt;code&gt;perl&lt;/code&gt;写的，将&lt;code&gt;text&lt;/code&gt;文件按标记转成&lt;code&gt;html&lt;/code&gt;文件的工具，可以看看其作者的&lt;a href=&quot;http://daringfireball.net/projects/markdown/syntax&quot;&gt;介绍&lt;/a&gt;。下面来总结下它的用法。&lt;/p&gt;
+&lt;h1 id=&quot;1-标题&quot;&gt;&lt;a href=&quot;#1-标题&quot; class=&quot;headerlink&quot; title=&quot;1. 标题&quot;&gt;&lt;/a&gt;1. 标题&lt;/h1&gt;&lt;p&gt;标题只有六级，用&lt;code&gt;#&lt;/code&gt;来表示，这个符号越多表示标题越小。&lt;/p&gt;
+&lt;figure class=&quot;highlight clean&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;# 一级标题&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;## 二级标题&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;### 三级标题&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;#### 四级标题&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;##### 五级标题&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;###### 六级标题&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;效果如下：&lt;/p&gt;
+&lt;h1 id=&quot;一级标题&quot;&gt;&lt;a href=&quot;#一级标题&quot; class=&quot;headerlink&quot; title=&quot;一级标题&quot;&gt;&lt;/a&gt;一级标题&lt;/h1&gt;&lt;h2 id=&quot;二级标题&quot;&gt;&lt;a href=&quot;#二级标题&quot; class=&quot;headerlink&quot; title=&quot;二级标题&quot;&gt;&lt;/a&gt;二级标题&lt;/h2&gt;&lt;h3 id=&quot;三级标题&quot;&gt;&lt;a href=&quot;#三级标题&quot; class=&quot;headerlink&quot; title=&quot;三级标题&quot;&gt;&lt;/a&gt;三级标题&lt;/h3&gt;&lt;h4 id=&quot;四级标题&quot;&gt;&lt;a href=&quot;#四级标题&quot; class=&quot;headerlink&quot; title=&quot;四级标题&quot;&gt;&lt;/a&gt;四级标题&lt;/h4&gt;&lt;h5 id=&quot;五级标题&quot;&gt;&lt;a href=&quot;#五级标题&quot; class=&quot;headerlink&quot; title=&quot;五级标题&quot;&gt;&lt;/a&gt;五级标题&lt;/h5&gt;&lt;h6 id=&quot;六级标题&quot;&gt;&lt;a href=&quot;#六级标题&quot; class=&quot;headerlink&quot; title=&quot;六级标题&quot;&gt;&lt;/a&gt;六级标题&lt;/h6&gt;&lt;h1 id=&quot;2-列表&quot;&gt;&lt;a href=&quot;#2-列表&quot; class=&quot;headerlink&quot; title=&quot;2. 列表&quot;&gt;&lt;/a&gt;2. 列表&lt;/h1&gt;&lt;h4 id=&quot;无序列表&quot;&gt;&lt;a href=&quot;#无序列表&quot; class=&quot;headerlink&quot; title=&quot;无序列表&quot;&gt;&lt;/a&gt;无序列表&lt;/h4&gt;&lt;p&gt;即没顺序的列表(注意列表下面要留一空行，否则会出现下面的标签解析错误情况)。&lt;br&gt;&lt;figure class=&quot;highlight asciidoc&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;bullet&quot;&gt;* &lt;/span&gt;列表一&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;bullet&quot;&gt;* &lt;/span&gt;列表二&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;bullet&quot;&gt;* &lt;/span&gt;列表三&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;效果如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;列表一&lt;/li&gt;
+&lt;li&gt;列表二&lt;/li&gt;
+&lt;li&gt;列表三&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="工具" scheme="http://www.befuncool.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="工具" scheme="http://www.befuncool.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何提BUG</title>
+    <link href="http://www.befuncool.com/2016/11/23/how-to-bug-report/"/>
+    <id>http://www.befuncool.com/2016/11/23/how-to-bug-report/</id>
+    <published>2016-11-23T08:02:12.000Z</published>
+    <updated>2016-12-06T05:00:25.555Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/scared-bug.jpg" class="full-image"></p>
+<p>我曾在很多公司工作过，接触过各式各样的人。其中有刚入门没多久，没有多少经验的，也有工作了10年左右的老员工，有的是管理能力出色的，有的则是一塌糊涂。在他们中，很难找到真正懂得测试的，有的甚至工作了好多年，自己也是做开发的，测试知识完全是连入门都没达到。</p>
+<p>如何给一个系统提BUG，鲜有人能做好。可是测试这项工作是非常重要的，讲究科学的，如何给系统BUG，是一个很重要的问题。这件事如果能做好，程序开发进度会有很大提升。反之如果做不好，对开发，甚至是对整个团队的氛围都是有危害的。</p>
+<p>首先来看一个案例：A是测试人员，B是程序员。有一天，A不知道操作了什么，程序的某个功能不起作用了，于是第二天早上，他跑去跟B说：嘿，你的XX功能不能用啊，检查检查。B丈二摸不着头脑：你说的那个功能在我这边没问题啊？A说：不知道了，你自己测一下。B测了一下午，还是没发现问题。第三天，A去找B：那个问题解决了没有啊？B一脸无辜地说，我测试没发现问题。A火了起来：我说有问题就有问题，你自己不会测一下吗，我那天都测到了，还说没问题？B也不高兴了……于是整个气氛变得很紧张……</p>
+<p>后面的事就不用多说了，就是测试和开发互厮，没想到最后结局是这样：原来A的系统忘了设置某个东西，导致了A那边和B这边的结果不一样。一个简单的事情，就这样浪费了几天时间，而且搞得双方都不愉快。</p>
+<p>这样的情况想必工作过几年的人都有遇到或见到过。一件事，双方都觉得自己是对的。可是问题在哪呢？下面我们来尝试列一下关于如何提BUG的知识。</p>
+<h2 id="提交BUG的作用"><a href="#提交BUG的作用" class="headerlink" title="提交BUG的作用"></a>提交BUG的作用</h2><ul>
+<li>告诉开发者他们没有注意到的问题。</li>
+<li>帮助开发者他们开发他们没意识到的新功能。</li>
+<li>帮助开发者感知用户的使用情况。</li>
+</ul>
+<h2 id="什么时候提交BUG"><a href="#什么时候提交BUG" class="headerlink" title="什么时候提交BUG"></a>什么时候提交BUG</h2><ul>
+<li>有错误的消息。</li>
+<li>黑屏或者数据不见了。</li>
+<li>程序没有按照期望的执行。</li>
+<li>程序挂掉、卡住、变慢。</li>
+<li>程序的数据答案有问题。</li>
+</ul>
+<p>下面这几个一般属于用户体验范畴。是帮助开发者意识到新功能以及知道一些用户使用情况。在紧急情况下，优先解决上面的硬性问题。</p>
+<ul>
+<li>程序一定需要应变措施才能运行。</li>
+<li>没有从程序得到需要的东西。</li>
+<li>不知道怎么操作程序。</li>
+<li>不喜欢程序的操作方式。</li>
+</ul>
+<h2 id="提BUG常见的问题"><a href="#提BUG常见的问题" class="headerlink" title="提BUG常见的问题"></a>提BUG常见的问题</h2><h6 id="“这个功能不能用”"><a href="#“这个功能不能用”" class="headerlink" title="“这个功能不能用”"></a>“这个功能不能用”</h6><p>我曾亲眼见过很多工作很多年的人(甚至自己也是程序员)这样反应问题。这样给开发人员的感觉是不信任和不尊敬。如果这个功能不能用，想必开发人员肯定注意到了。如果他们没注意到，那在他们那边肯定是能用的。因此，要么你做了一些和他们不一样的操作，或者是你的环境配置跟他们的不一样。开发人员需要的是信息，提供信息是提BUG要做的事情，通常信息提供越多越好。</p>
+<h6 id="“”"><a href="#“”" class="headerlink" title="“”"></a>“”</h6><h2 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h2><ul>
+<li>可以使用一些<strong>BUG管理系统</strong>，这是比较明智的做法。</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/scared-bug.jpg&quot; class=&quot;full-image&quot;&gt;&lt;/p&gt;
+&lt;p&gt;我曾在很多公司工作过，接触过各式各样的人。其中有刚入门没多久，没有多少经验的，也有工作了10年左右的老员工，有的是管理能力出色的，有的则是一塌糊涂。在他
+    
+    </summary>
+    
+      <category term="测试" scheme="http://www.befuncool.com/categories/%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="测试" scheme="http://www.befuncool.com/tags/%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>玩玩React native</title>
+    <link href="http://www.befuncool.com/2016/11/22/First-paly-React-native/"/>
+    <id>http://www.befuncool.com/2016/11/22/First-paly-React-native/</id>
+    <published>2016-11-22T02:14:05.000Z</published>
+    <updated>2016-12-06T05:00:25.551Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/reactnative.png" class="full-image"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/reactnative.png&quot; class=&quot;full-image&quot;&gt;&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="React native" scheme="http://www.befuncool.com/categories/React-native/"/>
+    
+    
+      <category term="React native" scheme="http://www.befuncool.com/tags/React-native/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Lua初解</title>
+    <link href="http://www.befuncool.com/2016/11/22/Lua%E5%88%9D%E8%A7%A3/"/>
+    <id>http://www.befuncool.com/2016/11/22/Lua初解/</id>
+    <published>2016-11-22T02:12:38.000Z</published>
+    <updated>2016-12-06T05:00:25.555Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/lua.png" class="full-image"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/lua.png&quot; class=&quot;full-image&quot;&gt;&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="Lua" scheme="http://www.befuncool.com/categories/Lua/"/>
+    
+    
+      <category term="Lua" scheme="http://www.befuncool.com/tags/Lua/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Go之初见</title>
+    <link href="http://www.befuncool.com/2016/11/22/Go%E4%B9%8B%E5%88%9D%E8%A7%81/"/>
+    <id>http://www.befuncool.com/2016/11/22/Go之初见/</id>
+    <published>2016-11-22T01:56:05.000Z</published>
+    <updated>2016-12-06T05:00:25.555Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/go.png" class="full-image"></p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>Go语言是Google于2009年推出的<a href="https://github.com/golang/go" target="_blank" rel="external">开源语言</a>，又叫<code>Golang</code>，Go具有如下特性：</p>
+<ul>
+<li>其并发机制让使用者很容易写出充分利用多核和网络机器的程序来，且不失灵活性。</li>
+<li>可快速编译成机器码，并且还具有GC和运行时反射的功能。</li>
+<li>是一种静态语言，同时又具有动态语言的特性。</li>
+</ul>
+<h3 id="感受"><a href="#感受" class="headerlink" title="感受"></a>感受</h3><p>Go的官网在<a href="https://golang.org/" target="_blank" rel="external">这里</a>，可以在<a href="https://gobyexample.com/" target="_blank" rel="external">这里</a>在网页上感受下Go的风貌(在代码块右上角有个图标，点击可进入网页IDE)。另外可以在<a href="https://tour.golang.org" target="_blank" rel="external">这里</a>有个简单的教程，并且还能网页上运行相应代码，非常之便利(同样注意右上角可以进行例子选择)。关于这个网页Go的原理可看下面这张图，简单说就是运用<code>RPC</code>,将客户端代码放到服务端取执行，然后返回结果给我们的网页客户端展现。<br><img src="/images/goweboverview.png" alt=""></p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>这里以Windows环境为例。</p>
+<ul>
+<li>到<a href="https://golang.org/dl/" target="_blank" rel="external">这里</a>下载相应的版本，然后安装，这里选择Windows的<code>MSI</code>文件安装(安装程序会自动设置环境变量)。</li>
+<li></li>
+</ul>
+<p>安装完后，打开一个命令行</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/go.png&quot; class=&quot;full-image&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;Go语言是Google于2009年
+    
+    </summary>
+    
+      <category term="Go" scheme="http://www.befuncool.com/categories/Go/"/>
+    
+    
+      <category term="Go" scheme="http://www.befuncool.com/tags/Go/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo-NexT主题使用mathjax输入数学公式注意事项</title>
+    <link href="http://www.befuncool.com/2016/11/20/Hexo-NexT%E4%B8%BB%E9%A2%98%E4%BD%BF%E7%94%A8mathjax%E8%BE%93%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/"/>
+    <id>http://www.befuncool.com/2016/11/20/Hexo-NexT主题使用mathjax输入数学公式注意事项/</id>
+    <published>2016-11-20T11:28:25.000Z</published>
+    <updated>2016-12-06T05:00:25.555Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/mj-logo.svg" class="full-image"></p>
+<p>Mathjax号称<code>Beautiful math in all browsers</code>，是展示数学公式方面的好工具。</p>
+<p>下面记录一些在NexT上用mathjax的知识。</p>
+<h4 id="Mathjax如何使用？"><a href="#Mathjax如何使用？" class="headerlink" title="Mathjax如何使用？"></a>Mathjax如何使用？</h4><ul>
+<li><a href="http://docs.mathjax.org/en/latest/start.html" target="_blank" rel="external">Mathjax官方文档</a>，这里似乎没有太多例子。</li>
+<li><a href="http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference" target="_blank" rel="external">Mathjax讨论</a>，这个里面例子挺多，够用了。</li>
+</ul>
+<h4 id="NexT如何集成mathjax？"><a href="#NexT如何集成mathjax？" class="headerlink" title="NexT如何集成mathjax？"></a>NexT如何集成mathjax？</h4><p>可以在主题的<code>_config.xml</code>下做类似如下配置后便可用：<br><figure class="highlight yaml"><table><tr><td class="code"><pre><div class="line"><span class="comment"># MathJax Support</span></div><div class="line"><span class="attr">mathjax:</span></div><div class="line"><span class="attr">  enable:</span> <span class="literal">true</span></div><div class="line"><span class="attr">  per_page:</span> <span class="literal">false</span></div><div class="line"><span class="attr">  cdn:</span> //cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML</div></pre></td></tr></table></figure></p>
+<h4 id="如果框架不提供配置怎么集成mathjax"><a href="#如果框架不提供配置怎么集成mathjax" class="headerlink" title="如果框架不提供配置怎么集成mathjax?"></a>如果框架不提供配置怎么集成mathjax?</h4><p>也很简单，只要在需要集成的页面上加载一个script即可：<br><figure class="highlight xml"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span></span></div><div class="line">   <span class="attr">src</span>=<span class="string">"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"</span>&gt;<span class="undefined"></span></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h4 id="如何复制别人的mathjax代码？"><a href="#如何复制别人的mathjax代码？" class="headerlink" title="如何复制别人的mathjax代码？"></a>如何复制别人的mathjax代码？</h4><ul>
+<li>可以查看网页源码，里面有的。</li>
+<li>可以直接在公式上右键，按照如下图的操作后便可看到代码。<br><img src="/images/mathjax.jpg" alt=""></li>
+<li>有一个在线识别手写数学公式的<a href="https://webdemo.myscript.com/views/math.html" target="_blank" rel="external">工具</a>。</li>
+</ul>
+<h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><ul>
+<li>在markdown中使用mathjax下标<code>_</code>时，记得一定要写成<code>\_</code>，否则将会出现不能解析的情况。</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/mj-logo.svg&quot; class=&quot;full-image&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Mathjax号称&lt;code&gt;Beautiful math in all browsers&lt;/code&gt;，是展示数学公式方面的好工具。&lt;/p&gt;
+&lt;p&gt;下面记录
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://www.befuncool.com/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="http://www.befuncool.com/tags/Hexo/"/>
+    
+      <category term="NextT" scheme="http://www.befuncool.com/tags/NextT/"/>
+    
+      <category term="mathjax" scheme="http://www.befuncool.com/tags/mathjax/"/>
+    
+  </entry>
+  
+</feed>

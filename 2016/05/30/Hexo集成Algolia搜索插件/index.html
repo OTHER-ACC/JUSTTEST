@@ -1,0 +1,1005 @@
+<!doctype html>
+
+
+  
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>Hexo集成Algolia搜索插件-必富客</title>
+  
+  <meta name="keywords" content="Hexo,Algolia,插件," />
+
+<meta name="description" content="Swiftype搜索最近停了，开始收费，不想收费又想有这个站内搜索功能怎么办？可以用Algolia免费版！不仅免费，感觉上要比Swiftype要快，下面简单说下集成步骤。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo集成Algolia搜索插件">
+<meta property="og:url" content="http://www.befuncool.com/2016/05/30/Hexo集成Algolia搜索插件/index.html">
+<meta property="og:site_name" content="必富客">
+<meta property="og:description" content="Swiftype搜索最近停了，开始收费，不想收费又想有这个站内搜索功能怎么办？可以用Algolia免费版！不仅免费，感觉上要比Swiftype要快，下面简单说下集成步骤。">
+<meta property="og:image" content="http://www.befuncool.com/images/algolia-index.png">
+<meta property="og:image" content="http://www.befuncool.com/images/algolia-result.png">
+<meta property="og:image" content="http://www.befuncool.com/images/algolia-class.png">
+<meta property="og:image" content="http://www.befuncool.com/images/algolia_logo.svg">
+<meta property="og:updated_time" content="2016-12-06T05:00:25.555Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo集成Algolia搜索插件">
+<meta name="twitter:description" content="Swiftype搜索最近停了，开始收费，不想收费又想有这个站内搜索功能怎么办？可以用Algolia免费版！不仅免费，感觉上要比Swiftype要快，下面简单说下集成步骤。">
+<meta name="twitter:image" content="http://www.befuncool.com/images/algolia-index.png">
+
+
+  <link rel="canonical" href="http://www.befuncool.com/2016/05/30/Hexo集成Algolia搜索插件/"/>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+  <meta name="google-site-verification" content="oYQa2txLI9tUS-fCDVQRx7mDvIcixJUVs-_yr7Rnoy4" />
+
+
+  <meta name="baidu-site-verification" content="wAcdUCCSr1" />
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="alternate" href="/atom.xml" title="必富客" type="application/atom+xml" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png?v=5.1.0" />
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6224780871593887000,
+      author: '必富客'
+    },
+    algolia: {
+      applicationID: 'PHS5ROOF8U',
+      apiKey: '546773ca81f23a4ad00fb1b704c3fbe4',
+      indexName: 'befuncool',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索...","hits_empty":"未找到匹配结果: ${query}","hits_stats":"找到${hits} 条查询结果，用时 ${time} ms"}
+    }
+  };
+</script>
+
+
+
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?fddba451177a6cb9f89e88f20b069fd3";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+  
+  
+    
+  
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">必富客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">必富客 ≈ be fun cool</p>
+</div>
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+<nav class="site-nav">
+  
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-one">
+          <a href="/one" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            一句
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Hexo集成Algolia搜索插件
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-30T19:12:38+00:00" content="2016-05-30">
+              2016-05-30
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/30/Hexo集成Algolia搜索插件/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/30/Hexo集成Algolia搜索插件/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/05/30/Hexo集成Algolia搜索插件/" class="leancloud_visitors" data-flag-title="Hexo集成Algolia搜索插件">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Swiftype搜索最近停了，开始收费，不想收费又想有这个站内搜索功能怎么办？<br>可以用Algolia免费版！不仅免费，感觉上要比Swiftype要快，下面简单说下集成步骤。</p>
+<a id="more"></a>
+<h3 id="第一步：到官网注册帐号-可以用github登录"><a href="#第一步：到官网注册帐号-可以用github登录" class="headerlink" title="第一步：到官网注册帐号(可以用github登录)"></a>第一步：到官网注册帐号(可以用github登录)</h3><ul>
+<li><a href="https://www.algolia.com" target="_blank" rel="external">官网地址</a>注册帐号</li>
+<li>新建一个INDEX如图<br><img src="/images/algolia-index.png" alt="Algolia新建Index"></li>
+<li>来到<a href="https://www.algolia.com/api-keys" target="_blank" rel="external">API-KEYS页面</a>，上面有后面需要的信息（记得还有上面的INDEX名）。<br><img src="/images/algolia-result.png" alt="Algolia的结果"></li>
+</ul>
+<h3 id="第二步：上传数据到Algolia"><a href="#第二步：上传数据到Algolia" class="headerlink" title="第二步：上传数据到Algolia"></a>第二步：上传数据到Algolia</h3><ul>
+<li><p>在Hexo工程目录的根目录下执行</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><div class="line">npm install hexo-algolia --save</div></pre></td></tr></table></figure>
+</li>
+<li><p>在<code>根目录</code>的<code>_config.yml</code>中加入如下配置，注意改成前面第一步注册成果数据</p>
+<figure class="highlight"><table><tr><td class="code"><pre><div class="line">algolia:</div><div class="line">  applicationID: 'your applicationID'</div><div class="line">  apiKey: 'your apiKey'</div><div class="line">  adminApiKey: 'your adminApiKey'</div><div class="line">  indexName: 'your indexName'</div><div class="line">  chunkSize: 5000</div></pre></td></tr></table></figure>
+</li>
+<li><p>接着执行，确保得到提交成功提示</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><div class="line">hexo algolia</div></pre></td></tr></table></figure>
+</li>
+<li><p>如下说明成功：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><div class="line">INFO  [Algolia] Identified <span class="number">58</span> posts to index.</div><div class="line">INFO  [Algolia] Clearing index...</div><div class="line">INFO  Files loaded in <span class="number">8.83</span> s</div><div class="line">INFO  [Algolia] Highlight tag definition success.</div><div class="line">INFO  [Algolia] Index cleared.</div><div class="line">INFO  [Algolia] Starting indexation...</div><div class="line">INFO  [Algolia] Import done.</div><div class="line">INFO  <span class="number">0</span> files generated in <span class="number">57</span> s</div></pre></td></tr></table></figure>
+</li>
+<li><p>注意事项：</p>
+<blockquote>
+<ul>
+<li>有的人可能发现没有上传数据，这时候可以先hexo clean然后再hexo algolia。 </li>
+<li>Mac下有可能出现Cannot read property之类的错误，则先检查看是否是.DS_Store惹的祸。</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h3 id="第三步：修改Hexo主题集成Algolia"><a href="#第三步：修改Hexo主题集成Algolia" class="headerlink" title="第三步：修改Hexo主题集成Algolia"></a>第三步：修改Hexo主题集成Algolia</h3><ul>
+<li><p>确保在<code>head.swig</code>文件中加入如下配置，注意改成自己的（本人用的是NEXT主题，如果是其他主题，请放在类似的生成页面头部的文件中）</p>
+<figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;script type="text/javascript" id="hexo.configuration"&gt;</div><div class="line">  var CONFIG = &#123;</div><div class="line">    root: '/',</div><div class="line">    algolia: &#123;</div><div class="line">          applicationID: 'your applicationID',</div><div class="line">          apiKey: 'your apiKey',</div><div class="line">          indexName: ''your indexName',</div><div class="line">          hits: &#123;"per_page":10&#125;,</div><div class="line">          labels: &#123;"input_placeholder":"搜索...","hits_empty":"未发现与 「$&#123;query&#125;」相关的内容","hits_stats":"$&#123;hits&#125; 条相关条目，使用了 $&#123;time&#125; 毫秒"&#125;</div><div class="line">        &#125;</div><div class="line">  &#125;;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>在要搜索的页面加入如下div</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"site-search"</span>&gt;</div><div class="line">  <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"algolia-popup popup"</span>&gt;</span></span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"algolia-search"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"algolia-search-input-icon"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-search"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"algolia-search-input"</span> <span class="attr">id</span>=<span class="string">"algolia-search-input"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"algolia-results"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"algolia-stats"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"algolia-hits"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"algolia-pagination"</span> <span class="attr">class</span>=<span class="string">"algolia-pagination"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"popup-btn-close"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-times-circle"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">&lt;<span class="regexp">/div&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>在要触发搜索的HTML节点加入一个CLASS名为<code>popup-trigger</code>，如图<br><img src="/images/algolia-class.png" alt="Algolia的结果"></p>
+</li>
+<li><p>确保要搜索页包含如下JS代码（可以单独建立一个.swig文件，然后在整体layout的swig文件中加入）</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">&lt;script src=<span class="string">"http://cdn.bootcss.com/instantsearch.js/1.5.1/instantsearch.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line"></div><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> algoliaSettings = CONFIG.algolia;</div><div class="line">  <span class="keyword">var</span> isAlgoliaSettingsValid = algoliaSettings.applicationID &amp;&amp;</div><div class="line">    algoliaSettings.apiKey &amp;&amp;</div><div class="line">    algoliaSettings.indexName;</div><div class="line"></div><div class="line">  <span class="keyword">if</span> (!isAlgoliaSettingsValid) &#123;</div><div class="line">    <span class="built_in">window</span>.console.error(<span class="string">'Algolia Settings are invalid.'</span>);</div><div class="line">    <span class="keyword">return</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">var</span> search = instantsearch(&#123;</div><div class="line">    <span class="attr">appId</span>: algoliaSettings.applicationID,</div><div class="line">    <span class="attr">apiKey</span>: algoliaSettings.apiKey,</div><div class="line">    <span class="attr">indexName</span>: algoliaSettings.indexName,</div><div class="line">    <span class="attr">searchFunction</span>: <span class="function"><span class="keyword">function</span> (<span class="params">helper</span>) </span>&#123;</div><div class="line">      <span class="keyword">var</span> searchInput = $(<span class="string">'#algolia-search-input'</span>).find(<span class="string">'input'</span>);</div><div class="line"></div><div class="line">      <span class="keyword">if</span> (searchInput.val()) &#123;</div><div class="line">        helper.search();</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  <span class="comment">// Registering Widgets</span></div><div class="line">  [</div><div class="line">    instantsearch.widgets.searchBox(&#123;</div><div class="line">      <span class="attr">container</span>: <span class="string">'#algolia-search-input'</span>,</div><div class="line">      <span class="attr">placeholder</span>: algoliaSettings.labels.input_placeholder</div><div class="line">    &#125;),</div><div class="line"></div><div class="line">    instantsearch.widgets.hits(&#123;</div><div class="line">      <span class="attr">container</span>: <span class="string">'#algolia-hits'</span>,</div><div class="line">      <span class="attr">hitsPerPage</span>: algoliaSettings.hits.per_page || <span class="number">10</span>,</div><div class="line">      <span class="attr">templates</span>: &#123;</div><div class="line">        <span class="attr">item</span>: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</div><div class="line">          <span class="keyword">return</span> (</div><div class="line">            <span class="string">'&lt;a href="'</span> + CONFIG.root + data.path + <span class="string">'" class="algolia-hit-item-link"&gt;'</span> +</div><div class="line">            data._highlightResult.title.value +</div><div class="line">            <span class="string">'&lt;/a&gt;'</span></div><div class="line">          );</div><div class="line">        &#125;,</div><div class="line">        <span class="attr">empty</span>: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</div><div class="line">          <span class="keyword">return</span> (</div><div class="line">            <span class="string">'&lt;div id="algolia-hits-empty"&gt;'</span> +</div><div class="line">            algoliaSettings.labels.hits_empty.replace(<span class="regexp">/\$\&#123;query&#125;/</span>, data.query) +</div><div class="line">            <span class="string">'&lt;/div&gt;'</span></div><div class="line">          );</div><div class="line">        &#125;</div><div class="line">      &#125;,</div><div class="line">      <span class="attr">cssClasses</span>: &#123;</div><div class="line">        <span class="attr">item</span>: <span class="string">'algolia-hit-item'</span></div><div class="line">      &#125;</div><div class="line">    &#125;),</div><div class="line"></div><div class="line">    instantsearch.widgets.stats(&#123;</div><div class="line">      <span class="attr">container</span>: <span class="string">'#algolia-stats'</span>,</div><div class="line">      <span class="attr">templates</span>: &#123;</div><div class="line">        <span class="attr">body</span>: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</div><div class="line">          <span class="keyword">var</span> stats = algoliaSettings.labels.hits_stats</div><div class="line">            .replace(<span class="regexp">/\$\&#123;hits&#125;/</span>, data.nbHits)</div><div class="line">            .replace(<span class="regexp">/\$\&#123;time&#125;/</span>, data.processingTimeMS);</div><div class="line">          <span class="keyword">return</span> (</div><div class="line">            stats +</div><div class="line">            <span class="string">'&lt;span class="algolia-powered"&gt;'</span> +</div><div class="line">            <span class="string">'  &lt;img src="'</span> + CONFIG.root + <span class="string">'images/algolia_logo.svg" alt="Algolia" /&gt;'</span> +</div><div class="line">            <span class="string">'&lt;/span&gt;'</span> +</div><div class="line">            <span class="string">'&lt;hr /&gt;'</span></div><div class="line">          );</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;),</div><div class="line"></div><div class="line">    instantsearch.widgets.pagination(&#123;</div><div class="line">      <span class="attr">container</span>: <span class="string">'#algolia-pagination'</span>,</div><div class="line">      <span class="attr">scrollTo</span>: <span class="literal">false</span>,</div><div class="line">      <span class="attr">showFirstLast</span>: <span class="literal">false</span>,</div><div class="line">      <span class="attr">labels</span>: &#123;</div><div class="line">        <span class="attr">first</span>: <span class="string">'&lt;i class="fa fa-angle-double-left"&gt;&lt;/i&gt;'</span>,</div><div class="line">        <span class="attr">last</span>: <span class="string">'&lt;i class="fa fa-angle-double-right"&gt;&lt;/i&gt;'</span>,</div><div class="line">        <span class="attr">previous</span>: <span class="string">'&lt;i class="fa fa-angle-left"&gt;&lt;/i&gt;'</span>,</div><div class="line">        <span class="attr">next</span>: <span class="string">'&lt;i class="fa fa-angle-right"&gt;&lt;/i&gt;'</span></div><div class="line">      &#125;,</div><div class="line">      <span class="attr">cssClasses</span>: &#123;</div><div class="line">        <span class="attr">root</span>: <span class="string">'pagination'</span>,</div><div class="line">        <span class="attr">item</span>: <span class="string">'pagination-item'</span>,</div><div class="line">        <span class="attr">link</span>: <span class="string">'page-number'</span>,</div><div class="line">        <span class="attr">active</span>: <span class="string">'current'</span>,</div><div class="line">        <span class="attr">disabled</span>: <span class="string">'disabled-item'</span></div><div class="line">      &#125;</div><div class="line">    &#125;)</div><div class="line">  ].forEach(search.addWidget, search);</div><div class="line"></div><div class="line">  search.start();</div><div class="line"></div><div class="line">  $(<span class="string">'.popup-trigger'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">    e.stopPropagation();</div><div class="line">    $(<span class="string">'body'</span>).append(<span class="string">'&lt;div class="popoverlay"&gt;'</span>).css(<span class="string">'overflow'</span>, <span class="string">'hidden'</span>);</div><div class="line">    $(<span class="string">'.popup'</span>).toggle();</div><div class="line">    $(<span class="string">'#algolia-search-input'</span>).find(<span class="string">'input'</span>).focus();</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  $(<span class="string">'.popup-btn-close'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="string">'.popup'</span>).hide();</div><div class="line">    $(<span class="string">'.popoverlay'</span>).remove();</div><div class="line">    $(<span class="string">'body'</span>).css(<span class="string">'overflow'</span>, <span class="string">''</span>);</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">&#125;);</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line"></div><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">  $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> ( $(<span class="string">'#local-search-input'</span>).size() === <span class="number">0</span>) &#123;</div><div class="line">      <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// Popup Window;</span></div><div class="line">    <span class="keyword">var</span> isfetched = <span class="literal">false</span>;</div><div class="line">    <span class="comment">// Search DB path;</span></div><div class="line">    <span class="keyword">var</span> search_path = <span class="string">"search.xml"</span>;</div><div class="line">    <span class="keyword">if</span> (search_path.length == <span class="number">0</span>) &#123;</div><div class="line">      search_path = <span class="string">"search.xml"</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> path = <span class="string">"/"</span> + search_path;</div><div class="line">    <span class="comment">// monitor main search box;</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">proceedsearch</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      $(<span class="string">"body"</span>).append(<span class="string">'&lt;div class="popoverlay"&gt;'</span>).css(<span class="string">'overflow'</span>, <span class="string">'hidden'</span>);</div><div class="line">      $(<span class="string">'.popup'</span>).toggle();</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    <span class="comment">// search function;</span></div><div class="line">    <span class="keyword">var</span> searchFunc = <span class="function"><span class="keyword">function</span>(<span class="params">path, search_id, content_id</span>) </span>&#123;</div><div class="line"><span class="meta">      'use strict'</span>;</div><div class="line">      $.ajax(&#123;</div><div class="line">        <span class="attr">url</span>: path,</div><div class="line">        <span class="attr">dataType</span>: <span class="string">"xml"</span>,</div><div class="line">        <span class="attr">async</span>: <span class="literal">true</span>,</div><div class="line">        <span class="attr">success</span>: <span class="function"><span class="keyword">function</span>(<span class="params"> xmlResponse </span>) </span>&#123;</div><div class="line">          <span class="comment">// get the contents from search data</span></div><div class="line">          isfetched = <span class="literal">true</span>;</div><div class="line">          $(<span class="string">'.popup'</span>).detach().appendTo(<span class="string">'.header-inner'</span>);</div><div class="line">          <span class="keyword">var</span> datas = $( <span class="string">"entry"</span>, xmlResponse ).map(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">return</span> &#123;</div><div class="line">              <span class="attr">title</span>: $( <span class="string">"title"</span>, <span class="keyword">this</span> ).text(),</div><div class="line">              <span class="attr">content</span>: $(<span class="string">"content"</span>,<span class="keyword">this</span>).text(),</div><div class="line">              <span class="attr">url</span>: $( <span class="string">"url"</span> , <span class="keyword">this</span>).text()</div><div class="line">            &#125;;</div><div class="line">          &#125;).get();</div><div class="line">          <span class="keyword">var</span> $input = <span class="built_in">document</span>.getElementById(search_id);</div><div class="line">          <span class="keyword">var</span> $resultContent = <span class="built_in">document</span>.getElementById(content_id);</div><div class="line">          $input.addEventListener(<span class="string">'input'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="keyword">var</span> matchcounts = <span class="number">0</span>;</div><div class="line">            <span class="keyword">var</span> str=<span class="string">'&lt;ul class=\"search-result-list\"&gt;'</span>;</div><div class="line">            <span class="keyword">var</span> keywords = <span class="keyword">this</span>.value.trim().toLowerCase().split(<span class="regexp">/[\s\-]+/</span>);</div><div class="line">            $resultContent.innerHTML = <span class="string">""</span>;</div><div class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.value.trim().length &gt; <span class="number">1</span>) &#123;</div><div class="line">              <span class="comment">// perform local searching</span></div><div class="line">              datas.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">                <span class="keyword">var</span> isMatch = <span class="literal">true</span>;</div><div class="line">                <span class="keyword">var</span> content_index = [];</div><div class="line">                <span class="keyword">var</span> data_title = data.title.trim().toLowerCase();</div><div class="line">                <span class="keyword">var</span> data_content = data.content.trim().replace(<span class="regexp">/&lt;[^&gt;]+&gt;/g</span>,<span class="string">""</span>).toLowerCase();</div><div class="line">                <span class="keyword">var</span> data_url = data.url;</div><div class="line">                <span class="keyword">var</span> index_title = <span class="number">-1</span>;</div><div class="line">                <span class="keyword">var</span> index_content = <span class="number">-1</span>;</div><div class="line">                <span class="keyword">var</span> first_occur = <span class="number">-1</span>;</div><div class="line">                <span class="comment">// only match artiles with not empty titles and contents</span></div><div class="line">                <span class="keyword">if</span>(data_title != <span class="string">''</span> &amp;&amp; data_content != <span class="string">''</span>) &#123;</div><div class="line">                  keywords.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">keyword, i</span>) </span>&#123;</div><div class="line">                    index_title = data_title.indexOf(keyword);</div><div class="line">                    index_content = data_content.indexOf(keyword);</div><div class="line">                    <span class="keyword">if</span>( index_title &lt; <span class="number">0</span> &amp;&amp; index_content &lt; <span class="number">0</span> )&#123;</div><div class="line">                      isMatch = <span class="literal">false</span>;</div><div class="line">                    &#125; <span class="keyword">else</span> &#123;</div><div class="line">                      <span class="keyword">if</span> (index_content &lt; <span class="number">0</span>) &#123;</div><div class="line">                        index_content = <span class="number">0</span>;</div><div class="line">                      &#125;</div><div class="line">                      <span class="keyword">if</span> (i == <span class="number">0</span>) &#123;</div><div class="line">                        first_occur = index_content;</div><div class="line">                      &#125;</div><div class="line">                    &#125;</div><div class="line">                  &#125;);</div><div class="line">                &#125;</div><div class="line">                <span class="comment">// show search results</span></div><div class="line">                <span class="keyword">if</span> (isMatch) &#123;</div><div class="line">                  matchcounts += <span class="number">1</span>;</div><div class="line">                  str += <span class="string">"&lt;li&gt;&lt;a href='"</span>+ data_url +<span class="string">"' class='search-result-title'&gt;"</span>+ data_title +<span class="string">"&lt;/a&gt;"</span>;</div><div class="line">                  <span class="keyword">var</span> content = data.content.trim().replace(<span class="regexp">/&lt;[^&gt;]+&gt;/g</span>,<span class="string">""</span>);</div><div class="line">                  <span class="keyword">if</span> (first_occur &gt;= <span class="number">0</span>) &#123;</div><div class="line">                    <span class="comment">// cut out 100 characters</span></div><div class="line">                    <span class="keyword">var</span> start = first_occur - <span class="number">20</span>;</div><div class="line">                    <span class="keyword">var</span> end = first_occur + <span class="number">80</span>;</div><div class="line">                    <span class="keyword">if</span>(start &lt; <span class="number">0</span>)&#123;</div><div class="line">                      start = <span class="number">0</span>;</div><div class="line">                    &#125;</div><div class="line">                    <span class="keyword">if</span>(start == <span class="number">0</span>)&#123;</div><div class="line">                      end = <span class="number">50</span>;</div><div class="line">                    &#125;</div><div class="line">                    <span class="keyword">if</span>(end &gt; content.length)&#123;</div><div class="line">                      end = content.length;</div><div class="line">                    &#125;</div><div class="line">                    <span class="keyword">var</span> match_content = content.substring(start, end);</div><div class="line">                    <span class="comment">// highlight all keywords</span></div><div class="line">                    keywords.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">keyword</span>)</span>&#123;</div><div class="line">                      <span class="keyword">var</span> regS = <span class="keyword">new</span> <span class="built_in">RegExp</span>(keyword, <span class="string">"gi"</span>);</div><div class="line">                      match_content = match_content.replace(regS, <span class="string">"&lt;b class=\"search-keyword\"&gt;"</span>+keyword+<span class="string">"&lt;/b&gt;"</span>);</div><div class="line">                    &#125;);</div><div class="line"></div><div class="line">                    str += <span class="string">"&lt;p class=\"search-result\"&gt;"</span> + match_content +<span class="string">"...&lt;/p&gt;"</span></div><div class="line">                  &#125;</div><div class="line">                  str += <span class="string">"&lt;/li&gt;"</span>;</div><div class="line">                &#125;</div><div class="line">              &#125;)&#125;;</div><div class="line">            str += <span class="string">"&lt;/ul&gt;"</span>;</div><div class="line">            <span class="keyword">if</span> (matchcounts == <span class="number">0</span>) &#123; str = <span class="string">'&lt;div id="no-result"&gt;&lt;i class="fa fa-frown-o fa-5x" /&gt;&lt;/div&gt;'</span> &#125;</div><div class="line">            <span class="keyword">if</span> (keywords == <span class="string">""</span>) &#123; str = <span class="string">'&lt;div id="no-result"&gt;&lt;i class="fa fa-search fa-5x" /&gt;&lt;/div&gt;'</span> &#125;</div><div class="line">            $resultContent.innerHTML = str;</div><div class="line">          &#125;);</div><div class="line">          proceedsearch();</div><div class="line">        &#125;</div><div class="line">      &#125;);&#125;</div><div class="line"></div><div class="line">    <span class="comment">// handle and trigger popup window;</span></div><div class="line">    $(<span class="string">'.popup-trigger'</span>).mousedown(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">      e.stopPropagation();</div><div class="line">      <span class="keyword">if</span> (isfetched == <span class="literal">false</span>) &#123;</div><div class="line">        searchFunc(path, <span class="string">'local-search-input'</span>, <span class="string">'local-search-result'</span>);</div><div class="line">      &#125; <span class="keyword">else</span> &#123;</div><div class="line">        proceedsearch();</div><div class="line">      &#125;;</div><div class="line"></div><div class="line">    &#125;);</div><div class="line"></div><div class="line">    $(<span class="string">'.popup-btn-close'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">      $(<span class="string">'.popup'</span>).hide();</div><div class="line">      $(<span class="string">".popoverlay"</span>).remove();</div><div class="line">      $(<span class="string">'body'</span>).css(<span class="string">'overflow'</span>, <span class="string">''</span>);</div><div class="line">    &#125;);</div><div class="line">    $(<span class="string">'.popup'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">      e.stopPropagation();</div><div class="line">    &#125;);</div><div class="line">  &#125;);</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+</li>
+<li><p>确保要搜索页包含如下CSS代码（可以单独建立一个.styl文件，然后在整体css的styl文件中加入，注意确保生成正确，必要时可以执行<code>hexo clean</code>）</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><div class="line"><span class="selector-tag">ul</span><span class="selector-class">.search-result-list</span> &#123;</div><div class="line">  <span class="attribute">padding-left</span>: <span class="number">0px</span>;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">0px</span> <span class="number">5px</span> <span class="number">0px</span> <span class="number">8px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">p</span><span class="selector-class">.search-result</span> &#123;</div><div class="line">  <span class="attribute">border-bottom</span>: <span class="number">1px</span> dashed <span class="number">#ccc</span>;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">5px</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">a</span><span class="selector-class">.search-result-title</span> &#123;</div><div class="line">  <span class="attribute">font-weight</span>: bold;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">a</span><span class="selector-class">.search-result</span> &#123;</div><div class="line">  <span class="attribute">border-bottom</span>: transparent;</div><div class="line">  <span class="attribute">display</span>: block;</div><div class="line">  <span class="attribute">white-space</span>: nowrap;</div><div class="line">  <span class="attribute">overflow</span>: hidden;</div><div class="line">  <span class="attribute">text-overflow</span>: ellipsis;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.search-keyword</span> &#123;</div><div class="line">  <span class="attribute">border-bottom</span>: <span class="number">1px</span> dashed <span class="number">#4088b8</span>;</div><div class="line">  <span class="attribute">font-weight</span>: bold;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#local-search-result</span> &#123;</div><div class="line">  <span class="attribute">height</span>: <span class="number">90%</span>;</div><div class="line">  <span class="attribute">overflow</span>: auto;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.popup</span> &#123;</div><div class="line">  <span class="attribute">display</span>: none;</div><div class="line">  <span class="attribute">position</span>: fixed;</div><div class="line">  <span class="attribute">top</span>: <span class="number">10%</span>;</div><div class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</div><div class="line">  <span class="attribute">width</span>: <span class="number">700px</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">80%</span>;</div><div class="line">  <span class="attribute">margin-left</span>: -<span class="number">350px</span>;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">3px</span> <span class="number">0</span> <span class="number">0</span> <span class="number">10px</span>;</div><div class="line">  <span class="attribute">background</span>: <span class="number">#fff</span>;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#333</span>;</div><div class="line">  <span class="attribute">z-index</span>: <span class="number">9999</span>;</div><div class="line">  <span class="attribute">border-radius</span>: <span class="number">5px</span>;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">media</span> (max-width: <span class="number">767px</span>) &#123;</div><div class="line">  <span class="selector-class">.popup</span> &#123;</div><div class="line">    <span class="attribute">padding</span>: <span class="number">3px</span>;</div><div class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</div><div class="line">    <span class="attribute">border-radius</span>: <span class="number">0px</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.popoverlay</span> &#123;</div><div class="line">  <span class="attribute">position</span>: fixed;</div><div class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</div><div class="line">  <span class="attribute">top</span>: <span class="number">0px</span>;</div><div class="line">  <span class="attribute">left</span>: <span class="number">0px</span>;</div><div class="line">  <span class="attribute">z-index</span>: <span class="number">2080</span>;</div><div class="line">  <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(0,0,0,0.3);</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#local-search-input</span> &#123;</div><div class="line">  <span class="attribute">margin-bottom</span>: <span class="number">10px</span>;</div><div class="line">  <span class="attribute">width</span>: <span class="number">50%</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.popup-btn-close</span> &#123;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">top</span>: <span class="number">6px</span>;</div><div class="line">  <span class="attribute">right</span>: <span class="number">14px</span>;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#4ebd79</span>;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">14px</span>;</div><div class="line">  <span class="attribute">font-weight</span>: bold;</div><div class="line">  <span class="attribute">text-transform</span>: uppercase;</div><div class="line">  <span class="attribute">cursor</span>: pointer;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#no-result</span> &#123;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">left</span>: <span class="number">44%</span>;</div><div class="line">  <span class="attribute">top</span>: <span class="number">42%</span>;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#ccc</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.busuanzi-count</span><span class="selector-pseudo">:before</span> &#123;</div><div class="line">  <span class="attribute">content</span>: <span class="string">" "</span>;</div><div class="line">  <span class="attribute">float</span>: left;</div><div class="line">  <span class="attribute">width</span>: <span class="number">260px</span>;</div><div class="line">  <span class="attribute">min-height</span>: <span class="number">25px</span>;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">media</span> (min-width: <span class="number">768px</span>) and (max-width: <span class="number">991px</span>) &#123;</div><div class="line">  <span class="selector-class">.busuanzi-count</span> &#123;</div><div class="line">    <span class="attribute">width</span>: auto;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.busuanzi-count</span><span class="selector-pseudo">:before</span> &#123;</div><div class="line">    <span class="attribute">display</span>: none;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">media</span> (max-width: <span class="number">767px</span>) &#123;</div><div class="line">  <span class="selector-class">.busuanzi-count</span> &#123;</div><div class="line">    <span class="attribute">width</span>: auto;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.busuanzi-count</span><span class="selector-pseudo">:before</span> &#123;</div><div class="line">    <span class="attribute">display</span>: none;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.site-uv</span>,</div><div class="line"><span class="selector-class">.site-pv</span>,</div><div class="line"><span class="selector-class">.page-pv</span> &#123;</div><div class="line">  <span class="attribute">display</span>: inline-block;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.site-uv</span> <span class="selector-class">.busuanzi-value</span>,</div><div class="line"><span class="selector-class">.site-pv</span> <span class="selector-class">.busuanzi-value</span>,</div><div class="line"><span class="selector-class">.page-pv</span> <span class="selector-class">.busuanzi-value</span> &#123;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">5px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.site-uv</span> &#123;</div><div class="line">  <span class="attribute">margin-right</span>: <span class="number">10px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.site-uv</span><span class="selector-pseudo">::after</span> &#123;</div><div class="line">  <span class="attribute">content</span>: <span class="string">"|"</span>;</div><div class="line">  <span class="attribute">padding-left</span>: <span class="number">10px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-popup</span> &#123;</div><div class="line">  <span class="attribute">overflow</span>: hidden;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-popup</span> <span class="selector-class">.popup-btn-close</span> &#123;</div><div class="line">  <span class="attribute">padding-left</span>: <span class="number">15px</span>;</div><div class="line">  <span class="attribute">border-left</span>: <span class="number">1px</span> solid <span class="number">#eee</span>;</div><div class="line">  <span class="attribute">top</span>: <span class="number">10px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-popup</span> <span class="selector-class">.popup-btn-close</span> <span class="selector-class">.fa</span> &#123;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#999</span>;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">18px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-popup</span> <span class="selector-class">.popup-btn-close</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.fa</span> &#123;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#222</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-search</span> &#123;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">15px</span> <span class="number">5px</span>;</div><div class="line">  <span class="attribute">max-height</span>: <span class="number">50px</span>;</div><div class="line">  <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="number">#ccc</span>;</div><div class="line">  <span class="attribute">background</span>: <span class="number">#f5f5f5</span>;</div><div class="line">  <span class="attribute">border-top-left-radius</span>: <span class="number">5px</span>;</div><div class="line">  <span class="attribute">border-top-right-radius</span>: <span class="number">5px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-search-input-icon</span> &#123;</div><div class="line">  <span class="attribute">display</span>: inline-block;</div><div class="line">  <span class="attribute">width</span>: <span class="number">20px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-search-input-icon</span> <span class="selector-class">.fa</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">18px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-search-input</span> &#123;</div><div class="line">  <span class="attribute">display</span>: inline-block;</div><div class="line">  <span class="attribute">width</span>: <span class="built_in">calc</span>(90% - 20px);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-search-input</span> <span class="selector-tag">input</span> &#123;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">5px</span> <span class="number">0</span>;</div><div class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">  <span class="attribute">outline</span>: none;</div><div class="line">  <span class="attribute">border</span>: none;</div><div class="line">  <span class="attribute">background</span>: transparent;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-powered</span> &#123;</div><div class="line">  <span class="attribute">float</span>: right;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-powered</span> <span class="selector-tag">img</span> &#123;</div><div class="line">  <span class="attribute">display</span>: inline-block;</div><div class="line">  <span class="attribute">height</span>: <span class="number">18px</span>;</div><div class="line">  <span class="attribute">vertical-align</span>: middle;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-results</span> &#123;</div><div class="line">  <span class="attribute">position</span>: relative;</div><div class="line">  <span class="attribute">overflow</span>: auto;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">30px</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="built_in">calc</span>(100% - 50px);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-results</span> <span class="selector-tag">hr</span> &#123;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">10px</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-results</span> <span class="selector-class">.highlight</span> &#123;</div><div class="line">  <span class="attribute">font-style</span>: normal;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">2px</span>;</div><div class="line">  <span class="attribute">font-size</span>: inherit;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#f00</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-hits</span> &#123;</div><div class="line">  <span class="attribute">margin-top</span>: <span class="number">20px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-hit-item</span> &#123;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">15px</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-hit-item-link</span> &#123;</div><div class="line">  <span class="attribute">display</span>: block;</div><div class="line">  <span class="attribute">border-bottom</span>: <span class="number">1px</span> dashed <span class="number">#ccc</span>;</div><div class="line">  <span class="attribute">transition-duration</span>: <span class="number">0.2s</span>;</div><div class="line">  <span class="attribute">transition-timing-function</span>: ease-in-out;</div><div class="line">  <span class="attribute">transition-delay</span>: <span class="number">0s</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-pagination</span> <span class="selector-class">.pagination</span> &#123;</div><div class="line">  <span class="attribute">margin-top</span>: <span class="number">40px</span>;</div><div class="line">  <span class="attribute">border-top</span>: none;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-pagination</span> <span class="selector-class">.pagination-item</span> &#123;</div><div class="line">  <span class="attribute">display</span>: inline-block;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-pagination</span> <span class="selector-class">.page-number</span> &#123;</div><div class="line">  <span class="attribute">border-top</span>: none;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-pagination</span> <span class="selector-class">.page-number</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">  <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="number">#222</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-pagination</span> <span class="selector-class">.disabled-item</span> &#123;</div><div class="line">  <span class="attribute">visibility</span>: hidden;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>将下面这张图片拷贝到你的source目录的images目录下<br><img src="/images/algolia_logo.svg" alt="Algolia图片"></p>
+</li>
+</ul>
+<h3 id="OK，终于完成了，样子可以参照本站的搜索功能！"><a href="#OK，终于完成了，样子可以参照本站的搜索功能！" class="headerlink" title="OK，终于完成了，样子可以参照本站的搜索功能！"></a>OK，终于完成了，样子可以参照本站的搜索功能！</h3>
+      
+    </div>
+
+    <div>
+      
+        
+  <div id="end-share">
+        <div id="eof" class="print-invisible">
+            <hr class="eof">
+        </div>
+        <style type="text/css">
+            hr.eof {
+              text-align: center;
+              border: 0;
+              height: 1px;
+              background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+              background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+              background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+              background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+              margin: 40px 0px 10px 0;
+            }
+            hr.eof:after {
+              content: '必富客';
+              display: inline-block;
+              position: relative;
+              top: -13px;
+              padding: 0 10px;
+              background: #fff;
+              color: #8c8b8b;
+            }
+        </style>
+        <div align="center">
+            <p><a href="http://www.befuncool.com/2016/05/30/Hexo集成Algolia搜索插件/">本文章</a>由<a href="http://www.befuncool.com" >必富客</a>制作，转载请注明出处</p>
+        </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hexo/" rel="tag"><i class="menu-item-icon fa fa-tags fa-fw"></i> Hexo</a>
+          
+            <a href="/tags/Algolia/" rel="tag"><i class="menu-item-icon fa fa-tags fa-fw"></i> Algolia</a>
+          
+            <a href="/tags/插件/" rel="tag"><i class="menu-item-icon fa fa-tags fa-fw"></i> 插件</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/01/如何将CSDN的文章转成-md的markdown文件/" rel="next" title="如何将CSDN的文章转成.md的markdown文件">
+                <i class="fa fa-chevron-left"></i> 如何将CSDN的文章转成.md的markdo...
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/29/酷我酷/" rel="prev" title="酷我酷">
+                酷我酷 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/05/30/Hexo集成Algolia搜索插件/"
+     data-title="Hexo集成Algolia搜索插件"
+     data-content=""
+     data-url="http://www.befuncool.com/2016/05/30/Hexo集成Algolia搜索插件/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      
+      <div class="ds-thread" data-thread-key="2016/05/30/Hexo集成Algolia搜索插件/"
+           data-title="Hexo集成Algolia搜索插件" data-url="http://www.befuncool.com/2016/05/30/Hexo集成Algolia搜索插件/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="569趣" />
+          <p class="site-author-name" itemprop="name">569趣</p>
+          <p class="site-description motion-element" itemprop="description">必富客 ≈ be fun cool</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">151</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">72</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">271</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/AfirSraftGarrier" target="_blank" title="GitHub" rel="external nofollow">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/1940794292" target="_blank" title="Weibo" rel="external nofollow">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/afirsraftgarrier-29" target="_blank" title="ZhiHu" rel="external nofollow">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  ZhiHu
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://i.youku.com/569fun" target="_blank" title="YouKu" rel="external nofollow">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  YouKu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank" rel="external nofollow">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步：到官网注册帐号-可以用github登录"><span class="nav-number">1.</span> <span class="nav-text">第一步：到官网注册帐号(可以用github登录)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二步：上传数据到Algolia"><span class="nav-number">2.</span> <span class="nav-text">第二步：上传数据到Algolia</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三步：修改Hexo主题集成Algolia"><span class="nav-number">3.</span> <span class="nav-text">第三步：修改Hexo主题集成Algolia</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OK，终于完成了，样子可以参照本站的搜索功能！"><span class="nav-number">4.</span> <span class="nav-text">OK，终于完成了，样子可以参照本站的搜索功能！</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">569趣</span>
+</div>
+
+<div class="copyright">
+  <span>HEXO-NEXT | 粤ICP备14100221号</span>
+</div>
+
+<div class="copyright">
+  
+
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"befuncool"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="//cdn.jsdelivr.net/ua-parser.js/0.7.10/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js?v=5.1.0"></script>
+    
+  
+
+
+
+
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("AT89dA9s9ITN3vD2V05trp9y-gzGzoHsz", "HOcOkyOb0yKmd7blgLe0JQ0v");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+  
+
+  
+  
+  
+    
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/instantsearch.js/1.5.1/instantsearch.min.css">
+
+  
+  
+    
+  
+  <script src="//cdn.bootcss.com/instantsearch.js/1.5.1/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
+
+
+</body>
+</html>
